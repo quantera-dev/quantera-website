@@ -283,22 +283,40 @@ console.log('%cFor sales team support, contact: quantera4us@gmail.com', 'color: 
 // CHARTS INITIALIZATION
 // ==========================================
 function initCharts() {
+    console.log('Initializing charts...');
+
     // Check if Chart.js is loaded
     if (typeof Chart === 'undefined') {
-        console.error('Chart.js library not loaded');
+        console.error('Chart.js library not loaded! Charts will not display.');
+
+        // Show error message to user
+        const chartWrappers = document.querySelectorAll('.chart-wrapper');
+        chartWrappers.forEach(wrapper => {
+            wrapper.innerHTML = '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #ef4444; font-size: 14px;">Chart library failed to load. Please refresh the page.</div>';
+        });
         return;
     }
 
-    // Chart.js default configuration
-    Chart.defaults.color = '#a1a1a1';
-    Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.1)';
-    Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif';
+    console.log('Chart.js loaded successfully');
 
-    // Initialize Chart 1: Time Comparison Chart
-    initTimeComparisonChart();
+    try {
+        // Chart.js default configuration
+        Chart.defaults.color = '#a1a1a1';
+        Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.1)';
+        Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif';
 
-    // Initialize Chart 2: Financial Impact Chart
-    initFinancialImpactChart();
+        // Initialize Chart 1: Time Comparison Chart
+        console.log('Initializing time comparison chart...');
+        initTimeComparisonChart();
+
+        // Initialize Chart 2: Financial Impact Chart
+        console.log('Initializing financial impact chart...');
+        initFinancialImpactChart();
+
+        console.log('All charts initialized successfully!');
+    } catch (error) {
+        console.error('Error initializing charts:', error);
+    }
 }
 
 // ==========================================
@@ -306,7 +324,10 @@ function initCharts() {
 // ==========================================
 function initTimeComparisonChart() {
     const ctx = document.getElementById('timeComparisonChart');
-    if (!ctx) return;
+    if (!ctx) {
+        console.warn('Time comparison chart canvas not found');
+        return;
+    }
 
     new Chart(ctx, {
         type: 'bar',
@@ -422,7 +443,10 @@ function initTimeComparisonChart() {
 // ==========================================
 function initFinancialImpactChart() {
     const ctx = document.getElementById('financialImpactChart');
-    if (!ctx) return;
+    if (!ctx) {
+        console.warn('Financial impact chart canvas not found');
+        return;
+    }
 
     new Chart(ctx, {
         type: 'bar',
