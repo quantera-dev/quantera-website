@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     initContactForm();
     initScrollEffects();
+    initCharts();
 });
 
 // ==========================================
@@ -277,3 +278,246 @@ initSectionTracking();
 // Log page visits
 console.log('%c🚀 Quantera Marketing Website', 'font-size: 16px; font-weight: bold; color: #0ea5e9;');
 console.log('%cFor sales team support, contact: quantera4us@gmail.com', 'color: #6b7280;');
+
+// ==========================================
+// CHARTS INITIALIZATION
+// ==========================================
+function initCharts() {
+    // Check if Chart.js is loaded
+    if (typeof Chart === 'undefined') {
+        console.error('Chart.js library not loaded');
+        return;
+    }
+
+    // Chart.js default configuration
+    Chart.defaults.color = '#a1a1a1';
+    Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.1)';
+    Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif';
+
+    // Initialize Chart 1: Time Comparison Chart
+    initTimeComparisonChart();
+
+    // Initialize Chart 2: Financial Impact Chart
+    initFinancialImpactChart();
+}
+
+// ==========================================
+// CHART 1: TIME WASTED VS TIME SAVED
+// ==========================================
+function initTimeComparisonChart() {
+    const ctx = document.getElementById('timeComparisonChart');
+    if (!ctx) return;
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Searching for data', 'Duplicating work', 'Total Productivity Gain'],
+            datasets: [
+                {
+                    label: 'Traditional Workflow (hrs/day)',
+                    data: [2.5, 1.1, 0], // Total will be shown separately
+                    backgroundColor: 'rgba(239, 68, 68, 0.8)',
+                    borderColor: 'rgba(239, 68, 68, 1)',
+                    borderWidth: 2,
+                    borderRadius: 8,
+                },
+                {
+                    label: 'With Quantera (hrs/day)',
+                    data: [0.083, 0.167, 0], // 5 min = 0.083 hrs, 10 min = 0.167 hrs
+                    backgroundColor: 'rgba(34, 197, 94, 0.8)',
+                    borderColor: 'rgba(34, 197, 94, 1)',
+                    borderWidth: 2,
+                    borderRadius: 8,
+                },
+                {
+                    label: 'Hours Saved per Year (100 employees, in thousands)',
+                    data: [0, 0, 85], // 85,000 hours shown as 85 (in thousands)
+                    backgroundColor: 'rgba(236, 72, 153, 0.8)',
+                    borderColor: 'rgba(236, 72, 153, 1)',
+                    borderWidth: 2,
+                    borderRadius: 8,
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: {
+                mode: 'index',
+                intersect: false,
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        padding: 15,
+                        font: {
+                            size: 12,
+                            weight: '500'
+                        },
+                        color: '#d1d5db',
+                        usePointStyle: true,
+                        pointStyle: 'rect',
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(17, 17, 17, 0.95)',
+                    titleColor: '#ffffff',
+                    bodyColor: '#d1d5db',
+                    borderColor: 'rgba(236, 72, 153, 0.3)',
+                    borderWidth: 1,
+                    padding: 12,
+                    displayColors: true,
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            if (context.datasetIndex === 2) {
+                                // For hours saved, show in thousands
+                                label += context.parsed.y + 'k hours';
+                            } else {
+                                label += context.parsed.y + ' hrs/day';
+                            }
+                            return label;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.05)',
+                    },
+                    ticks: {
+                        color: '#9ca3af',
+                        font: {
+                            size: 11
+                        }
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false,
+                    },
+                    ticks: {
+                        color: '#9ca3af',
+                        font: {
+                            size: 11
+                        },
+                        maxRotation: 45,
+                        minRotation: 0
+                    }
+                }
+            }
+        }
+    });
+}
+
+// ==========================================
+// CHART 2: FINANCIAL IMPACT
+// ==========================================
+function initFinancialImpactChart() {
+    const ctx = document.getElementById('financialImpactChart');
+    if (!ctx) return;
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['100 Employees', '1,000 Employees'],
+            datasets: [
+                {
+                    label: 'Lost Productivity (Before Quantera)',
+                    data: [0.65, 6.5], // In millions
+                    backgroundColor: 'rgba(239, 68, 68, 0.8)',
+                    borderColor: 'rgba(239, 68, 68, 1)',
+                    borderWidth: 2,
+                    borderRadius: 8,
+                },
+                {
+                    label: 'Annual Savings (With Quantera)',
+                    data: [4.2, 42], // In millions
+                    backgroundColor: 'rgba(34, 197, 94, 0.8)',
+                    borderColor: 'rgba(34, 197, 94, 1)',
+                    borderWidth: 2,
+                    borderRadius: 8,
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: {
+                mode: 'index',
+                intersect: false,
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        padding: 15,
+                        font: {
+                            size: 12,
+                            weight: '500'
+                        },
+                        color: '#d1d5db',
+                        usePointStyle: true,
+                        pointStyle: 'rect',
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(17, 17, 17, 0.95)',
+                    titleColor: '#ffffff',
+                    bodyColor: '#d1d5db',
+                    borderColor: 'rgba(236, 72, 153, 0.3)',
+                    borderWidth: 1,
+                    padding: 12,
+                    displayColors: true,
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            label += '$' + context.parsed.y + 'M';
+                            return label;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.05)',
+                    },
+                    ticks: {
+                        color: '#9ca3af',
+                        font: {
+                            size: 11
+                        },
+                        callback: function(value) {
+                            return '$' + value + 'M';
+                        }
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false,
+                    },
+                    ticks: {
+                        color: '#9ca3af',
+                        font: {
+                            size: 12,
+                            weight: '500'
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
