@@ -353,7 +353,7 @@ function initTimeComparisonChart() {
             datasets: [
                 {
                     label: 'Traditional Workflow (hrs/day)',
-                    data: [2.5, 1.1, 0], // Total will be shown separately
+                    data: [0.5, 0.25, 0], // Total will be shown separately. Modeled assumption: 30 min/day searching + 15 min/day redoing duplicated work.
                     backgroundColor: 'rgba(154, 163, 181, 0.8)',
                     borderColor: 'rgba(154, 163, 181, 1)',
                     borderWidth: 2,
@@ -361,15 +361,15 @@ function initTimeComparisonChart() {
                 },
                 {
                     label: 'With Quantera (hrs/day)',
-                    data: [0.083, 0.167, 0], // 5 min = 0.083 hrs, 10 min = 0.167 hrs
+                    data: [0.083, 0.083, 0], // Modeled assumption: ~5 min/day each with instant retrieval.
                     backgroundColor: 'rgba(36, 64, 140, 0.85)',
                     borderColor: 'rgba(36, 64, 140, 1)',
                     borderWidth: 2,
                     borderRadius: 4,
                 },
                 {
-                    label: 'Hours Saved per Year (100 employees, in thousands)',
-                    data: [0, 0, 85], // 85,000 hours shown as 85 (in thousands)
+                    label: 'Est. Hours Saved per Year (100 employees, in thousands)',
+                    data: [0, 0, 14.6], // 14,600 hours shown as 14.6 (in thousands) — derived from the two rows above at 250 working days/year.
                     backgroundColor: 'rgba(168, 129, 63, 0.85)',
                     borderColor: 'rgba(168, 129, 63, 1)',
                     borderWidth: 2,
@@ -471,16 +471,16 @@ function initFinancialImpactChart() {
             labels: ['100 Employees', '1,000 Employees'],
             datasets: [
                 {
-                    label: 'Lost Productivity (Before Quantera)',
-                    data: [0.65, 6.5], // In millions
+                    label: 'Traditional Workflow — Time Cost ($M)',
+                    data: [0.94, 9.38], // Modeled: 0.75 hrs/day/employee x 250 workdays x $50/hr assumed fully-loaded cost.
                     backgroundColor: 'rgba(154, 163, 181, 0.8)',
                     borderColor: 'rgba(154, 163, 181, 1)',
                     borderWidth: 2,
                     borderRadius: 4,
                 },
                 {
-                    label: 'Annual Savings (With Quantera)',
-                    data: [4.2, 42], // In millions
+                    label: 'With Quantera — Time Cost ($M)',
+                    data: [0.21, 2.08], // Modeled: 0.167 hrs/day/employee x 250 workdays x $50/hr assumed fully-loaded cost.
                     backgroundColor: 'rgba(36, 64, 140, 0.85)',
                     borderColor: 'rgba(36, 64, 140, 1)',
                     borderWidth: 2,

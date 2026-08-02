@@ -521,6 +521,20 @@ h1, h2, h3, h4 {
     opacity: 0.8;
 }
 
+.metrics-disclaimer {
+    text-align: center;
+    color: var(--ink-faint);
+    font-size: 0.8125rem;
+    font-style: italic;
+    margin-top: 1.75rem;
+    line-height: 1.6;
+}
+
+.section-dark .metrics-disclaimer {
+    color: var(--on-dark-muted);
+    opacity: 0.8;
+}
+
 /* ==========================================
    SERVICES SECTION
    ========================================== */
