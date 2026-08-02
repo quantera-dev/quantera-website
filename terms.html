@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Quantera Terms of Service - Legal terms and conditions">
     <title>Terms of Service | Quantera</title>
+    <script>
+        // Night mode: 8pm-6am Central, regardless of visitor's own timezone.
+        (function () {
+            try {
+                var hour = parseInt(new Intl.DateTimeFormat('en-US', {
+                    hour: 'numeric',
+                    hour12: false,
+                    timeZone: 'America/Chicago'
+                }).format(new Date()), 10);
+                if (hour >= 20 || hour < 6) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='7' fill='none' stroke='%2324408C' stroke-width='2.5'/%3E%3Ccircle cx='20' cy='20' r='14' fill='none' stroke='%2324408C' stroke-width='1.75' stroke-opacity='0.45'/%3E%3Ccircle cx='20' cy='20' r='3' fill='%23A8813F'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -91,7 +107,14 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <h1><a href="index.html" style="text-decoration: none; color: var(--royal-deep);">Quantera</a></h1>
+                <a href="index.html" style="display: flex; align-items: center; gap: 0.6rem; text-decoration: none;">
+                    <svg class="brand-mark" viewBox="0 0 40 40" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="20" cy="20" r="7" stroke="currentColor" stroke-width="2.5"/>
+                        <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.75" stroke-opacity="0.45"/>
+                        <circle class="brand-mark-dot" cx="20" cy="20" r="3"/>
+                    </svg>
+                    <h1 style="color: var(--royal);">Quantera</h1>
+                </a>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html#home" class="nav-link">Home</a></li>
@@ -116,7 +139,7 @@
                 <p class="last-updated"><strong>Effective Date:</strong> October 2025</p>
 
                 <h2>1. Acceptance of Terms</h2>
-                <p>By accessing or using Quantera's website (quantera.ai), you agree to these Terms of Service. If you do not agree, please discontinue use of the site.</p>
+                <p>By accessing or using Quantera's website (quanteraai.io), you agree to these Terms of Service. If you do not agree, please discontinue use of the site.</p>
 
                 <h2>2. Use of the Website</h2>
                 <p>Our website provides general information about Quantera's products and services. You agree to use it only for lawful purposes and in a way that does not harm, disrupt, or interfere with others' access.</p>
@@ -189,7 +212,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 Quantera. All rights reserved.</p>
+                <p>&copy; 2026 Quantera. All rights reserved.</p>
             </div>
         </div>
     </footer>

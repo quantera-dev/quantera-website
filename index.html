@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Quantera - Secure AI-powered RAG platform for enterprise document intelligence">
     <title>Quantera | Secure AI for Enterprise</title>
+    <script>
+        // Night mode: 8pm-6am Central, regardless of visitor's own timezone.
+        (function () {
+            try {
+                var hour = parseInt(new Intl.DateTimeFormat('en-US', {
+                    hour: 'numeric',
+                    hour12: false,
+                    timeZone: 'America/Chicago'
+                }).format(new Date()), 10);
+                if (hour >= 20 || hour < 6) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='7' fill='none' stroke='%2324408C' stroke-width='2.5'/%3E%3Ccircle cx='20' cy='20' r='14' fill='none' stroke='%2324408C' stroke-width='1.75' stroke-opacity='0.45'/%3E%3Ccircle cx='20' cy='20' r='3' fill='%23A8813F'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,6 +31,11 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
+                <svg class="brand-mark" viewBox="0 0 40 40" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="20" cy="20" r="7" stroke="currentColor" stroke-width="2.5"/>
+                    <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.75" stroke-opacity="0.45"/>
+                    <circle class="brand-mark-dot" cx="20" cy="20" r="3"/>
+                </svg>
                 <h1>Quantera</h1>
             </div>
             <ul class="nav-menu">
@@ -150,14 +171,15 @@
     <section id="impact" class="section section-dark">
         <div class="container">
             <div class="section-eyebrow">02 — Impact</div>
-            <h2 class="section-title">Measurable Impact &amp; ROI</h2>
-            <p class="section-subtitle">Real data demonstrating how Quantera transforms enterprise productivity and saves millions in wasted time.</p>
+            <h2 class="section-title">Projected Impact &amp; ROI</h2>
+            <p class="section-subtitle">A model of the time and cost impact private AI can have on a typical 100-person enterprise team.</p>
+            <p class="impact-disclaimer">These figures are illustrative estimates based on typical enterprise search and document workflows — not measured results from a specific customer engagement. Actual results vary by organization.</p>
 
             <!-- Chart 1: Time Wasted vs Time Saved -->
             <div class="chart-container">
                 <div class="chart-header">
-                    <h3>Time Wasted vs. Time Saved (Before vs. After Quantera)</h3>
-                    <p class="chart-description">Quantera cuts routine search and rework time by over 85,000 hours annually for a 100-person team — equivalent to regaining six full work weeks per employee.</p>
+                    <h3>Time Wasted vs. Time Saved — Illustrative Model</h3>
+                    <p class="chart-description">In this model, cutting routine search and rework time saves an estimated 85,000+ hours annually for a 100-person team — equivalent to roughly six work weeks reclaimed per employee.</p>
                 </div>
                 <div class="chart-wrapper">
                     <canvas id="timeComparisonChart"></canvas>
@@ -167,8 +189,8 @@
             <!-- Chart 2: Annual Financial Impact -->
             <div class="chart-container">
                 <div class="chart-header">
-                    <h3>Annual Financial Impact</h3>
-                    <p class="chart-description">Organizations using Quantera reclaim up to $4.2 million per 100 employees in annual productivity gains.</p>
+                    <h3>Annual Financial Impact — Illustrative Model</h3>
+                    <p class="chart-description">Under this model, organizations could reclaim an estimated $4.2 million per 100 employees in annual productivity value.</p>
                 </div>
                 <div class="chart-wrapper">
                     <canvas id="financialImpactChart"></canvas>
@@ -178,8 +200,8 @@
             <!-- Chart 3: Productivity Gains by Profession -->
             <div class="chart-container">
                 <div class="chart-header">
-                    <h3>Productivity Gains by Profession</h3>
-                    <p class="chart-description">Industry-specific efficiency improvements across different professional sectors.</p>
+                    <h3>Productivity Gains by Profession — Illustrative Model</h3>
+                    <p class="chart-description">Estimated efficiency gains by role, modeled from typical workflow patterns rather than audited customer data.</p>
                 </div>
                 <div class="productivity-stats">
                     <div class="stat-card">
@@ -221,17 +243,18 @@
             <div class="metrics-summary">
                 <div class="metric-item">
                     <div class="metric-number">85,000+</div>
-                    <div class="metric-label">Hours Saved Annually (per 100 employees)</div>
+                    <div class="metric-label">Est. Hours Saved Annually (per 100 employees)</div>
                 </div>
                 <div class="metric-item">
                     <div class="metric-number">$4.2M</div>
-                    <div class="metric-label">Annual Savings (per 100 employees)</div>
+                    <div class="metric-label">Est. Annual Savings (per 100 employees)</div>
                 </div>
                 <div class="metric-item">
                     <div class="metric-number">6 Weeks</div>
-                    <div class="metric-label">Reclaimed per Employee/Year</div>
+                    <div class="metric-label">Est. Reclaimed per Employee/Year</div>
                 </div>
             </div>
+            <p class="impact-disclaimer">Modeled estimates, not measured customer results.</p>
         </div>
     </section>
 
@@ -374,7 +397,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 Quantera. All rights reserved.</p>
+                <p>&copy; 2026 Quantera. All rights reserved.</p>
             </div>
         </div>
     </footer>

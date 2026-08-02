@@ -299,10 +299,27 @@ function initCharts() {
 
     console.log('Chart.js loaded successfully');
 
+    // Charts are colored to match whichever theme (light/dark) was applied
+    // at page load by the inline night-mode script in <head>.
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    window.CHART_PALETTE = isDark ? {
+        text: '#A6AFC4',
+        title: '#EEF0F6',
+        grid: 'rgba(110, 144, 234, 0.14)',
+        tooltipBg: 'rgba(27, 37, 64, 0.97)',
+        tooltipBorder: 'rgba(110, 144, 234, 0.3)'
+    } : {
+        text: '#5B6478',
+        title: '#1C2333',
+        grid: 'rgba(36, 64, 140, 0.08)',
+        tooltipBg: 'rgba(255, 254, 250, 0.97)',
+        tooltipBorder: 'rgba(36, 64, 140, 0.25)'
+    };
+
     try {
         // Chart.js default configuration
-        Chart.defaults.color = '#5B6478';
-        Chart.defaults.borderColor = 'rgba(36, 64, 140, 0.12)';
+        Chart.defaults.color = CHART_PALETTE.text;
+        Chart.defaults.borderColor = CHART_PALETTE.grid;
         Chart.defaults.font.family = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
 
         // Initialize Chart 1: Time Comparison Chart
@@ -377,16 +394,16 @@ function initTimeComparisonChart() {
                             size: 12,
                             weight: '500'
                         },
-                        color: '#5B6478',
+                        color: CHART_PALETTE.text,
                         usePointStyle: true,
                         pointStyle: 'rect',
                     }
                 },
                 tooltip: {
-                    backgroundColor: 'rgba(255, 254, 250, 0.97)',
-                    titleColor: '#1C2333',
-                    bodyColor: '#5B6478',
-                    borderColor: 'rgba(36, 64, 140, 0.25)',
+                    backgroundColor: CHART_PALETTE.tooltipBg,
+                    titleColor: CHART_PALETTE.title,
+                    bodyColor: CHART_PALETTE.text,
+                    borderColor: CHART_PALETTE.tooltipBorder,
                     borderWidth: 1,
                     padding: 12,
                     displayColors: true,
@@ -411,10 +428,10 @@ function initTimeComparisonChart() {
                 y: {
                     beginAtZero: true,
                     grid: {
-                        color: 'rgba(36, 64, 140, 0.08)',
+                        color: CHART_PALETTE.grid,
                     },
                     ticks: {
-                        color: '#5B6478',
+                        color: CHART_PALETTE.text,
                         font: {
                             size: 11
                         }
@@ -425,7 +442,7 @@ function initTimeComparisonChart() {
                         display: false,
                     },
                     ticks: {
-                        color: '#5B6478',
+                        color: CHART_PALETTE.text,
                         font: {
                             size: 11
                         },
