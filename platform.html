@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How Quantera works: a private, local-first retrieval and AI architecture that keeps enterprise data inside your own environment.">
+    <title>Platform | Quantera</title>
+    <script>
+        // Night mode: 8pm-6am Central, regardless of visitor's own timezone.
+        (function () {
+            try {
+                var hour = parseInt(new Intl.DateTimeFormat('en-US', {
+                    hour: 'numeric',
+                    hour12: false,
+                    timeZone: 'America/Chicago'
+                }).format(new Date()), 10);
+                if (hour >= 20 || hour < 6) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='7' fill='none' stroke='%2324408C' stroke-width='2.5'/%3E%3Ccircle cx='20' cy='20' r='14' fill='none' stroke='%2324408C' stroke-width='1.75' stroke-opacity='0.45'/%3E%3Ccircle cx='20' cy='20' r='3' fill='%23A8813F'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="display: flex; align-items: center; gap: 0.6rem; text-decoration: none;">
+                    <svg class="brand-mark" viewBox="0 0 40 40" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="20" cy="20" r="7" stroke="currentColor" stroke-width="2.5"/>
+                        <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.75" stroke-opacity="0.45"/>
+                        <circle class="brand-mark-dot" cx="20" cy="20" r="3"/>
+                    </svg>
+                    <h1 style="color: var(--royal);">Quantera</h1>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+                <li><a href="industries.html" class="nav-link">Industries</a></li>
+                <li><a href="platform.html" class="nav-link">Platform</a></li>
+                <li><a href="company.html" class="nav-link">Company</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="index.html#contact" class="btn btn-primary">Request Demo</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="section-eyebrow">Platform</div>
+            <h1>How Quantera Works</h1>
+            <p>A private, local-first architecture built to keep your data inside your own environment at every step.</p>
+        </div>
+    </header>
+
+    <!-- How It Works -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-eyebrow">01 — Pipeline</div>
+            <h2 class="section-title">From Your Data to an Answer</h2>
+            <p class="section-subtitle">Four steps, all running inside your own environment.</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="6" rx="1"/><rect x="4" y="14" width="16" height="6" rx="1"/><path d="M7.5 7h.01M7.5 17h.01"/></svg>
+                        </div>
+                        <h3>Ingest</h3>
+                    </div>
+                    <p>Connect your existing document stores and internal knowledge sources.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2V5z"/><path d="M20 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 0 2-2V5z"/></svg>
+                        </div>
+                        <h3>Index</h3>
+                    </div>
+                    <p>Content is processed and indexed entirely within your private environment.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+                        </div>
+                        <h3>Retrieve</h3>
+                    </div>
+                    <p>Natural-language queries surface the most relevant internal content in real time.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4V5z"/></svg>
+                        </div>
+                        <h3>Answer</h3>
+                    </div>
+                    <p>Grounded, context-aware answers are generated from your own data — nothing external, nothing exposed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Architecture -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-eyebrow">02 — Architecture</div>
+            <h2 class="section-title">Security by Design</h2>
+            <p class="section-subtitle">The same architecture principles that make Quantera private also make it secure.</p>
+
+            <div class="security-grid">
+                <div class="security-feature">
+                    <div class="security-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="15.5" r="1.4"/></svg>
+                    </div>
+                    <h3>End-to-End Encryption</h3>
+                    <p>All communications are encrypted in transit and at rest, ensuring data integrity at every step.</p>
+                </div>
+
+                <div class="security-feature">
+                    <div class="security-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3.3 2.5-6 5.5-6s5.5 2.7 5.5 6"/><circle cx="17" cy="9" r="2.25"/><path d="M15.5 14.2a4.6 4.6 0 0 1 4.5 4.6"/></svg>
+                    </div>
+                    <h3>Role-Based Access Control</h3>
+                    <p>Granular permissions ensure users only access what they need, maintaining strict data governance.</p>
+                </div>
+
+                <div class="security-feature">
+                    <div class="security-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="6" rx="1"/><rect x="4" y="14" width="16" height="6" rx="1"/><path d="M7.5 7h.01M7.5 17h.01"/></svg>
+                    </div>
+                    <h3>Local-First Processing</h3>
+                    <p>Data stays within your environment. No external APIs, no cloud dependencies, complete control.</p>
+                </div>
+
+                <div class="security-feature">
+                    <div class="security-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="1.5"/><path d="M9 4V3.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1V4"/><path d="M9 12.5l2 2 4-4.5"/></svg>
+                    </div>
+                    <h3>Compliance Ready</h3>
+                    <p>Built to support GDPR, HIPAA, SOC 2, and other regulatory frameworks critical to your industry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations -->
+    <section class="section section-light">
+        <div class="container text-center">
+            <div class="section-eyebrow">03 — Integrations</div>
+            <h2 class="section-title">Works With What You Already Have</h2>
+            <p class="page-lede">Quantera connects to your existing document systems and internal knowledge stores rather than asking you to migrate everything into a new one. Your workflows stay the same — what changes is how quickly you can find and use what's already there.</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-gray">
+        <div class="container text-center">
+            <h2 class="section-title">See the architecture in action</h2>
+            <p class="section-subtitle">Walk through a live deployment with our team.</p>
+            <div class="hero-buttons">
+                <a href="index.html#contact" class="btn btn-primary btn-lg">Request a Demo</a>
+                <a href="index.html#contact" class="btn btn-secondary btn-lg">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Quantera</h3>
+                    <p>Secure AI for Enterprise</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="solutions.html">Solutions</a></li>
+                            <li><a href="industries.html">Industries</a></li>
+                            <li><a href="platform.html">Platform</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="company.html">About</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                            <li><a href="index.html#contact">Request Demo</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Quantera. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

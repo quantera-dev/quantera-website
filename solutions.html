@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quantera solutions: private AI deployment, document intelligence, compliance consulting, and custom AI configurations.">
+    <title>Solutions | Quantera</title>
+    <script>
+        // Night mode: 8pm-6am Central, regardless of visitor's own timezone.
+        (function () {
+            try {
+                var hour = parseInt(new Intl.DateTimeFormat('en-US', {
+                    hour: 'numeric',
+                    hour12: false,
+                    timeZone: 'America/Chicago'
+                }).format(new Date()), 10);
+                if (hour >= 20 || hour < 6) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='7' fill='none' stroke='%2324408C' stroke-width='2.5'/%3E%3Ccircle cx='20' cy='20' r='14' fill='none' stroke='%2324408C' stroke-width='1.75' stroke-opacity='0.45'/%3E%3Ccircle cx='20' cy='20' r='3' fill='%23A8813F'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="display: flex; align-items: center; gap: 0.6rem; text-decoration: none;">
+                    <svg class="brand-mark" viewBox="0 0 40 40" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="20" cy="20" r="7" stroke="currentColor" stroke-width="2.5"/>
+                        <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.75" stroke-opacity="0.45"/>
+                        <circle class="brand-mark-dot" cx="20" cy="20" r="3"/>
+                    </svg>
+                    <h1 style="color: var(--royal);">Quantera</h1>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+                <li><a href="industries.html" class="nav-link">Industries</a></li>
+                <li><a href="platform.html" class="nav-link">Platform</a></li>
+                <li><a href="company.html" class="nav-link">Company</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="index.html#contact" class="btn btn-primary">Request Demo</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="section-eyebrow">Solutions</div>
+            <h1>Private AI, Built Around Your Workflows</h1>
+            <p>Four ways Quantera deploys secure, private AI inside your organization — from document intelligence to fully custom configurations.</p>
+        </div>
+    </header>
+
+    <!-- Solutions Grid -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4.5"/></svg>
+                        </div>
+                        <h3>Private AI Deployment</h3>
+                    </div>
+                    <p>End-to-end implementation of Quantera's secure AI within your private infrastructure — no external API calls, no data leaving your environment.</p>
+                    <ul>
+                        <li>On-premises or private-cloud deployment</li>
+                        <li>Integration with existing infrastructure</li>
+                        <li>Dedicated onboarding and configuration support</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2V5z"/><path d="M20 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 0 2-2V5z"/></svg>
+                        </div>
+                        <h3>Document Intelligence</h3>
+                    </div>
+                    <p>Real-time retrieval, summarization, and question-answering across your internal files, wherever they live.</p>
+                    <ul>
+                        <li>Connects to your existing document stores</li>
+                        <li>Natural-language search across internal knowledge</li>
+                        <li>Summarization and Q&amp;A grounded in your own content</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="1.5"/><path d="M9 4V3.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1V4"/><path d="M9 12.5l2 2 4-4.5"/></svg>
+                        </div>
+                        <h3>Compliance &amp; Security Consulting</h3>
+                    </div>
+                    <p>Deployment guidance aligned with your industry's security and privacy standards, from initial architecture through ongoing operation.</p>
+                    <ul>
+                        <li>Architecture review against your compliance requirements</li>
+                        <li>Access-control and data-governance design</li>
+                        <li>Ongoing security guidance as your needs evolve</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 4v2.5M12 17.5V20M4 12h2.5M17.5 12H20"/><circle cx="12" cy="12" r="2"/></svg>
+                        </div>
+                        <h3>Custom AI Solutions</h3>
+                    </div>
+                    <p>Industry-tuned configurations for teams with specialized workflows — finance, legal, and cybersecurity among them.</p>
+                    <ul>
+                        <li>Tailored retrieval and workflow configuration</li>
+                        <li>Custom integrations with internal tools</li>
+                        <li>Ongoing tuning as your use cases grow</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-gray">
+        <div class="container text-center">
+            <h2 class="section-title">Not sure which solution fits?</h2>
+            <p class="section-subtitle">Tell us about your workflow and we'll help you find the right starting point.</p>
+            <div class="hero-buttons">
+                <a href="index.html#contact" class="btn btn-primary btn-lg">Request a Demo</a>
+                <a href="index.html#contact" class="btn btn-secondary btn-lg">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Quantera</h3>
+                    <p>Secure AI for Enterprise</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="solutions.html">Solutions</a></li>
+                            <li><a href="industries.html">Industries</a></li>
+                            <li><a href="platform.html">Platform</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="company.html">About</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                            <li><a href="index.html#contact">Request Demo</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Quantera. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
