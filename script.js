@@ -276,8 +276,8 @@ initSectionTracking();
 // ==========================================
 
 // Log page visits
-console.log('%c🚀 Quantera Marketing Website', 'font-size: 16px; font-weight: bold; color: #0ea5e9;');
-console.log('%cFor sales team support, contact: quantera4us@gmail.com', 'color: #6b7280;');
+console.log('%cQuantera Marketing Website', 'font-size: 16px; font-weight: bold; color: #24408C;');
+console.log('%cFor sales team support, contact: quantera4us@gmail.com', 'color: #5B6478;');
 
 // ==========================================
 // CHARTS INITIALIZATION
@@ -292,7 +292,7 @@ function initCharts() {
         // Show error message to user
         const chartWrappers = document.querySelectorAll('.chart-wrapper');
         chartWrappers.forEach(wrapper => {
-            wrapper.innerHTML = '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #ef4444; font-size: 14px;">Chart library failed to load. Please refresh the page.</div>';
+            wrapper.innerHTML = '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #5B6478; font-size: 14px;">Chart library failed to load. Please refresh the page.</div>';
         });
         return;
     }
@@ -301,9 +301,9 @@ function initCharts() {
 
     try {
         // Chart.js default configuration
-        Chart.defaults.color = '#a1a1a1';
-        Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.1)';
-        Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif';
+        Chart.defaults.color = '#5B6478';
+        Chart.defaults.borderColor = 'rgba(36, 64, 140, 0.12)';
+        Chart.defaults.font.family = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
 
         // Initialize Chart 1: Time Comparison Chart
         console.log('Initializing time comparison chart...');
@@ -337,26 +337,26 @@ function initTimeComparisonChart() {
                 {
                     label: 'Traditional Workflow (hrs/day)',
                     data: [2.5, 1.1, 0], // Total will be shown separately
-                    backgroundColor: 'rgba(239, 68, 68, 0.8)',
-                    borderColor: 'rgba(239, 68, 68, 1)',
+                    backgroundColor: 'rgba(154, 163, 181, 0.8)',
+                    borderColor: 'rgba(154, 163, 181, 1)',
                     borderWidth: 2,
-                    borderRadius: 8,
+                    borderRadius: 4,
                 },
                 {
                     label: 'With Quantera (hrs/day)',
                     data: [0.083, 0.167, 0], // 5 min = 0.083 hrs, 10 min = 0.167 hrs
-                    backgroundColor: 'rgba(34, 197, 94, 0.8)',
-                    borderColor: 'rgba(34, 197, 94, 1)',
+                    backgroundColor: 'rgba(36, 64, 140, 0.85)',
+                    borderColor: 'rgba(36, 64, 140, 1)',
                     borderWidth: 2,
-                    borderRadius: 8,
+                    borderRadius: 4,
                 },
                 {
                     label: 'Hours Saved per Year (100 employees, in thousands)',
                     data: [0, 0, 85], // 85,000 hours shown as 85 (in thousands)
-                    backgroundColor: 'rgba(236, 72, 153, 0.8)',
-                    borderColor: 'rgba(236, 72, 153, 1)',
+                    backgroundColor: 'rgba(168, 129, 63, 0.85)',
+                    borderColor: 'rgba(168, 129, 63, 1)',
                     borderWidth: 2,
-                    borderRadius: 8,
+                    borderRadius: 4,
                 }
             ]
         },
@@ -377,16 +377,16 @@ function initTimeComparisonChart() {
                             size: 12,
                             weight: '500'
                         },
-                        color: '#d1d5db',
+                        color: '#5B6478',
                         usePointStyle: true,
                         pointStyle: 'rect',
                     }
                 },
                 tooltip: {
-                    backgroundColor: 'rgba(17, 17, 17, 0.95)',
-                    titleColor: '#ffffff',
-                    bodyColor: '#d1d5db',
-                    borderColor: 'rgba(236, 72, 153, 0.3)',
+                    backgroundColor: 'rgba(255, 254, 250, 0.97)',
+                    titleColor: '#1C2333',
+                    bodyColor: '#5B6478',
+                    borderColor: 'rgba(36, 64, 140, 0.25)',
                     borderWidth: 1,
                     padding: 12,
                     displayColors: true,
@@ -411,10 +411,10 @@ function initTimeComparisonChart() {
                 y: {
                     beginAtZero: true,
                     grid: {
-                        color: 'rgba(255, 255, 255, 0.05)',
+                        color: 'rgba(36, 64, 140, 0.08)',
                     },
                     ticks: {
-                        color: '#9ca3af',
+                        color: '#5B6478',
                         font: {
                             size: 11
                         }
@@ -425,7 +425,7 @@ function initTimeComparisonChart() {
                         display: false,
                     },
                     ticks: {
-                        color: '#9ca3af',
+                        color: '#5B6478',
                         font: {
                             size: 11
                         },
@@ -456,18 +456,18 @@ function initFinancialImpactChart() {
                 {
                     label: 'Lost Productivity (Before Quantera)',
                     data: [0.65, 6.5], // In millions
-                    backgroundColor: 'rgba(239, 68, 68, 0.8)',
-                    borderColor: 'rgba(239, 68, 68, 1)',
+                    backgroundColor: 'rgba(154, 163, 181, 0.8)',
+                    borderColor: 'rgba(154, 163, 181, 1)',
                     borderWidth: 2,
-                    borderRadius: 8,
+                    borderRadius: 4,
                 },
                 {
                     label: 'Annual Savings (With Quantera)',
                     data: [4.2, 42], // In millions
-                    backgroundColor: 'rgba(34, 197, 94, 0.8)',
-                    borderColor: 'rgba(34, 197, 94, 1)',
+                    backgroundColor: 'rgba(36, 64, 140, 0.85)',
+                    borderColor: 'rgba(36, 64, 140, 1)',
                     borderWidth: 2,
-                    borderRadius: 8,
+                    borderRadius: 4,
                 }
             ]
         },
@@ -488,16 +488,16 @@ function initFinancialImpactChart() {
                             size: 12,
                             weight: '500'
                         },
-                        color: '#d1d5db',
+                        color: '#5B6478',
                         usePointStyle: true,
                         pointStyle: 'rect',
                     }
                 },
                 tooltip: {
-                    backgroundColor: 'rgba(17, 17, 17, 0.95)',
-                    titleColor: '#ffffff',
-                    bodyColor: '#d1d5db',
-                    borderColor: 'rgba(236, 72, 153, 0.3)',
+                    backgroundColor: 'rgba(255, 254, 250, 0.97)',
+                    titleColor: '#1C2333',
+                    bodyColor: '#5B6478',
+                    borderColor: 'rgba(36, 64, 140, 0.25)',
                     borderWidth: 1,
                     padding: 12,
                     displayColors: true,
@@ -517,10 +517,10 @@ function initFinancialImpactChart() {
                 y: {
                     beginAtZero: true,
                     grid: {
-                        color: 'rgba(255, 255, 255, 0.05)',
+                        color: 'rgba(36, 64, 140, 0.08)',
                     },
                     ticks: {
-                        color: '#9ca3af',
+                        color: '#5B6478',
                         font: {
                             size: 11
                         },
@@ -534,7 +534,7 @@ function initFinancialImpactChart() {
                         display: false,
                     },
                     ticks: {
-                        color: '#9ca3af',
+                        color: '#5B6478',
                         font: {
                             size: 12,
                             weight: '500'
