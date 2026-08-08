@@ -270,4 +270,4 @@ initSectionTracking();
 
 // Log page visits
 console.log('%cQuantera Marketing Website', 'font-size: 16px; font-weight: bold; color: #24408C;');
-console.log('%cFor sales team support, contact: quantera4us@gmail.com', 'color: #5B6478;');
+console.log('%cFor sales team support, contact: admin@quanteraai.io', 'color: #5B6478;');
