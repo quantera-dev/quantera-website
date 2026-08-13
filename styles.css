@@ -580,6 +580,24 @@ h1, h2, h3, h4 {
     color: var(--royal);
 }
 
+.status-tag {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.2rem 0.65rem;
+    border: 1px solid var(--royal-line);
+    border-radius: 999px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+}
+
+.security-feature .status-tag {
+    border-color: var(--on-dark-line);
+    color: var(--on-dark-muted);
+}
+
 /* ==========================================
    PAGE HEADER (interior pages)
    ========================================== */
