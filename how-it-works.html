@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A walkthrough of Quantera end to end: scanning a real application, tracing what an RSA key protects, generating a supported ML-KEM migration, and verifying the result.">
+    <title>How It Works | Quantera</title>
+    <script>
+        // Night mode: 8pm-6am Central, regardless of visitor's own timezone.
+        (function () {
+            try {
+                var hour = parseInt(new Intl.DateTimeFormat('en-US', {
+                    hour: 'numeric',
+                    hour12: false,
+                    timeZone: 'America/Chicago'
+                }).format(new Date()), 10);
+                if (hour >= 20 || hour < 6) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='7' fill='none' stroke='%2324408C' stroke-width='2.5'/%3E%3Ccircle cx='20' cy='20' r='14' fill='none' stroke='%2324408C' stroke-width='1.75' stroke-opacity='0.45'/%3E%3Ccircle cx='20' cy='20' r='3' fill='%23A8813F'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="display: flex; align-items: center; gap: 0.6rem; text-decoration: none;">
+                    <svg class="brand-mark" viewBox="0 0 40 40" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="20" cy="20" r="7" stroke="currentColor" stroke-width="2.5"/>
+                        <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.75" stroke-opacity="0.45"/>
+                        <circle class="brand-mark-dot" cx="20" cy="20" r="3"/>
+                    </svg>
+                    <h1 style="color: var(--royal);">Quantera</h1>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="product.html" class="nav-link">Product</a></li>
+                <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+                <li><a href="security.html" class="nav-link">Security</a></li>
+                <li><a href="company.html" class="nav-link">Company</a></li>
+                <li><a href="demo.html" class="btn btn-primary">Request Demo</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="section-eyebrow">How It Works</div>
+            <h1>One repository, start to finish.</h1>
+            <p>A walkthrough of what actually happens when Quantera scans <code class="mono">customer-vault</code>, a Java service protecting customer financial records.</p>
+        </div>
+    </header>
+
+    <!-- Step 1 -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="step-card">
+                <div class="num">1</div>
+                <div>
+                    <h3>The application</h3>
+                    <p><code class="mono">customer-vault</code> encrypts customer records with AES-256-GCM, protects that AES key with RSA-2048, and signs transactions with ECDSA. Nothing about this is unusual — it's a normal Java service written years before ML-KEM or ML-DSA existed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 2 -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="step-card">
+                <div class="num">2</div>
+                <div>
+                    <h3>Quantera scans</h3>
+                    <p>A .zip upload or a GitHub App connection, pinned to a commit. The Repository Scanner parses 284 files, resolves 1,041 symbols, and produces an inventory:</p>
+                </div>
+            </div>
+            <table class="matrix-table" style="max-width: 820px;">
+                <thead><tr><th>Algorithm</th><th>Location</th><th>Purpose</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td class="mono" style="color: var(--ink); font-weight: 600;">AES-256-GCM</td><td class="mono">VaultEncryptionService.java:42</td><td>Data encryption</td><td><span class="qchip qchip-neutral">Retain</span></td></tr>
+                    <tr><td class="mono" style="color: var(--ink); font-weight: 600;">RSA-2048/OAEP</td><td class="mono">RsaKeyProtectionService.java:47</td><td>Key protection</td><td><span class="qchip qchip-pqc">Migration Ready</span></td></tr>
+                    <tr><td class="mono" style="color: var(--ink); font-weight: 600;">ECDSA P-256</td><td class="mono">TransactionSigner.java:29</td><td>Digital signature</td><td><span class="qchip qchip-warn">Review Required</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Step 3 -->
+    <section class="section section-light text-center">
+        <div class="container">
+            <div class="step-card" style="display: block; text-align: center;">
+                <h3>3. Quantera traces the RSA finding</h3>
+                <p style="max-width: 640px; margin: 0 auto 1.5rem;">The Cryptographic Context Engine resolves the call chain — not guessed, walked.</p>
+            </div>
+            <div class="flow-chain">
+                <span class="node">CustomerVaultService.store()</span><span class="sep">→</span>
+                <span class="node">VaultEncryptionService.seal()</span><span class="sep">→</span>
+                <span class="node hot">RsaKeyProtectionService.protectKey()</span><span class="sep">→</span>
+                <span class="node hot">Cipher.getInstance("RSA/OAEP")</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 4 -->
+    <section class="section section-gray text-center">
+        <div class="container">
+            <div class="step-card" style="display: block; text-align: center;">
+                <h3>4. Quantera determines what each finding needs</h3>
+            </div>
+            <table class="matrix-table" style="max-width: 700px;">
+                <thead><tr><th>Finding</th><th>Determination</th></tr></thead>
+                <tbody>
+                    <tr><td class="mono">RSA-2048 (key protection)</td><td class="yes">Key establishment → ML-KEM-768</td></tr>
+                    <tr><td class="mono">AES-256-GCM</td><td>Already quantum-resistant → Retain</td></tr>
+                    <tr><td class="mono">ECDSA P-256 (signature)</td><td>Flagged separately → signature migration, reviewed on its own</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Step 5 -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="step-card" style="display: block; text-align: center;">
+                <h3>5. Quantera generates the migration</h3>
+                <p style="max-width: 640px; margin: 0 auto 1.5rem;">RSA key protection → ML-KEM-768 (FIPS 203), approved by the policy engine's recipe for this exact pattern.</p>
+            </div>
+            <div class="diff-block">
+                <div class="diff-head">quantera/pqc-migration-4c1a90f2 · RsaKeyProtectionService.java</div>
+                <div class="diff-rows">
+                    <div class="dl ctx">  private static final String TRANSFORMATION =</div>
+                    <div class="dl minus">-         "RSA/ECB/OAEPWithSHA-256AndMGF1Padding";</div>
+                    <div class="dl plus">+         "ML-KEM-768";   // FIPS 203</div>
+                    <div class="dl ctx"> </div>
+                    <div class="dl minus">-     Cipher cipher = Cipher.getInstance(TRANSFORMATION);</div>
+                    <div class="dl minus">-     return cipher.doFinal(dataKey.getEncoded());</div>
+                    <div class="dl plus">+     KEM.Encapsulator enc = kem.newEncapsulator(keyPair.getPublic());</div>
+                    <div class="dl plus">+     return wrap(enc.encapsulate(), dataKey);</div>
+                    <div class="dl ctx"> </div>
+                    <div class="dl ctx">+ 4 generated tests: round-trip, tamper, interop, KAT vectors</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 6 -->
+    <section class="section section-dark text-center">
+        <div class="container">
+            <div class="step-card" style="display: block; text-align: center; margin-bottom: 2rem;">
+                <h3 style="color: var(--on-dark);">6. Quantera verifies</h3>
+            </div>
+            <div class="check-grid" style="max-width: 640px; margin: 0 auto; text-align: left;">
+                <div class="check-item"><span class="tick">✓</span><span>Baseline &amp; migrated build</span></div>
+                <div class="check-item"><span class="tick">✓</span><span>Existing tests</span></div>
+                <div class="check-item"><span class="tick">✓</span><span>4 generated PQC tests</span></div>
+                <div class="check-item"><span class="tick">✓</span><span>Behavioral workflow</span></div>
+                <div class="check-item"><span class="tick">✓</span><span>Targeted rescan</span></div>
+                <div class="check-item adv"><span class="tick">✓</span><span>Performance (advisory)</span></div>
+            </div>
+            <div style="margin-top: 2rem;">
+                <span class="qchip qchip-pqc" style="font-size: 0.9375rem; padding: 0.5rem 1.25rem;">VERIFIED FOR REVIEW</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 7 -->
+    <section class="section section-light text-center">
+        <div class="container">
+            <div class="step-card" style="display: block; text-align: center;">
+                <h3>7. The developer receives a review package</h3>
+                <p style="max-width: 640px; margin: 0 auto;">A draft pull request, not a merged change:</p>
+            </div>
+            <div class="pilot-card" style="text-align: left;">
+                <strong>Draft PR #218 opened</strong>
+                <ul>
+                    <li>Original algorithm &amp; location</li>
+                    <li>What it protected, and why it moved</li>
+                    <li>Build, test, and rescan output</li>
+                    <li>Performance delta</li>
+                    <li>One-command rollback</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-gray text-center">
+        <div class="container">
+            <h2 class="section-title">Run this against your own repository</h2>
+            <div class="hero-buttons">
+                <a href="demo.html" class="btn btn-primary btn-lg">Request a Demo</a>
+                <a href="product.html" class="btn btn-secondary btn-lg">Explore the Product</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Quantera</h3>
+                    <p>Post-Quantum Migration Engineering</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="product.html">Product</a></li>
+                            <li><a href="how-it-works.html">How It Works</a></li>
+                            <li><a href="security.html">Security</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="solutions.html">Overview</a></li>
+                            <li><a href="industries.html">Industries</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="company.html">About</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                            <li><a href="demo.html">Request Demo</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                            <li><a href="data-deletion.html">Data Deletion</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Quantera. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

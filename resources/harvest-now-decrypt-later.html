@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What harvest-now-decrypt-later means, why it makes post-quantum migration urgent before quantum computers exist, and how to think about your own data's exposure window.">
+    <title>What Is Harvest Now, Decrypt Later? | Quantera</title>
+    <script>
+        (function () {
+            try {
+                var hour = parseInt(new Intl.DateTimeFormat('en-US', {
+                    hour: 'numeric', hour12: false, timeZone: 'America/Chicago'
+                }).format(new Date()), 10);
+                if (hour >= 20 || hour < 6) { document.documentElement.setAttribute('data-theme', 'dark'); }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='7' fill='none' stroke='%2324408C' stroke-width='2.5'/%3E%3Ccircle cx='20' cy='20' r='14' fill='none' stroke='%2324408C' stroke-width='1.75' stroke-opacity='0.45'/%3E%3Ccircle cx='20' cy='20' r='3' fill='%23A8813F'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="/index.html" style="display: flex; align-items: center; gap: 0.6rem; text-decoration: none;">
+                    <svg class="brand-mark" viewBox="0 0 40 40" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="20" cy="20" r="7" stroke="currentColor" stroke-width="2.5"/>
+                        <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.75" stroke-opacity="0.45"/>
+                        <circle class="brand-mark-dot" cx="20" cy="20" r="3"/>
+                    </svg>
+                    <h1 style="color: var(--royal);">Quantera</h1>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/index.html#home" class="nav-link">Home</a></li>
+                <li><a href="/product.html" class="nav-link">Product</a></li>
+                <li><a href="/how-it-works.html" class="nav-link">How It Works</a></li>
+                <li><a href="/solutions.html" class="nav-link">Solutions</a></li>
+                <li><a href="/security.html" class="nav-link">Security</a></li>
+                <li><a href="/company.html" class="nav-link">Company</a></li>
+                <li><a href="/demo.html" class="btn btn-primary">Request Demo</a></li>
+            </ul>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <div class="section-eyebrow">PQC Education</div>
+            <h1>What Is Harvest Now, Decrypt Later?</h1>
+        </div>
+    </header>
+
+    <section class="section section-light">
+        <div class="container">
+            <p class="article-meta">Why the migration deadline isn't "when quantum computers arrive."</p>
+            <div class="article-content">
+                <h2>The idea in one sentence</h2>
+                <p>An adversary can record RSA- or ECC-encrypted traffic and data today, store it, and decrypt it later, the moment a quantum computer capable of running Shor's algorithm at sufficient scale exists — even though that computer doesn't exist yet.</p>
+
+                <h2>Why this changes the timeline</h2>
+                <p>For a lot of security problems, "we'll deal with it when it becomes a real threat" is a reasonable stance. Harvest now, decrypt later breaks that logic, because the attack has two separate clocks:</p>
+                <ul>
+                    <li><strong>Collection</strong> — can happen right now, against any RSA- or ECC-protected data an adversary can intercept or exfiltrate, with no quantum computer required.</li>
+                    <li><strong>Decryption</strong> — happens later, whenever a cryptographically relevant quantum computer exists.</li>
+                </ul>
+                <p>If your data needs to stay confidential for five, ten, or twenty years, the question isn't whether a quantum computer exists today. It's whether one will exist before your data's confidentiality requirement expires — and whether the migration finishes before the collection window closes.</p>
+
+                <h2>Who this actually matters for</h2>
+                <p>Not all data is equally exposed. The organizations with the most urgency are the ones protecting information with a long shelf life:</p>
+                <ul>
+                    <li>Financial account and transaction records, often retained for years by regulation</li>
+                    <li>Health records, which frequently need to stay confidential for decades</li>
+                    <li>Government and defense communications and long-lived state secrets</li>
+                    <li>Legal and privileged material tied to matters that can span years</li>
+                    <li>Any long-lived cryptographic material itself — root keys, signing keys, certificate authorities — where compromise doesn't just expose one record, it undermines everything that key ever protected</li>
+                </ul>
+
+                <h2>What "collected now" actually requires</h2>
+                <p>Harvest now, decrypt later doesn't require a breach of your systems in the way ransomware does. Encrypted traffic that transits a network an adversary can observe — an ISP, an internet exchange, a compromised intermediate hop — is enough to collect. The encryption itself, RSA or ECC, is exactly what's supposed to make that observation useless. Under this threat model, it isn't, on a long enough timeline.</p>
+
+                <h2>What this means for a migration plan</h2>
+                <p>The practical takeaway isn't "panic." It's "sequence by data lifetime." Start by finding where RSA and ECC actually protect your longest-lived, most sensitive data — not just where they're easiest to find — because that's the risk with the most urgent clock. A repository-level cryptographic inventory is the starting point for that sequencing; see <a href="/product.html" style="color: var(--royal); text-decoration: none;">how Quantera builds one</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-gray text-center">
+        <div class="container">
+            <h2 class="section-title">Find out what's exposed in your own systems</h2>
+            <div class="hero-buttons">
+                <a href="/demo.html" class="btn btn-primary btn-lg">Request a Demo</a>
+                <a href="/resources.html" class="btn btn-secondary btn-lg">More Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand"><h3>Quantera</h3><p>Post-Quantum Migration Engineering</p></div>
+                <div class="footer-links">
+                    <div class="footer-column"><h4>Product</h4><ul><li><a href="/product.html">Product</a></li><li><a href="/how-it-works.html">How It Works</a></li><li><a href="/security.html">Security</a></li></ul></div>
+                    <div class="footer-column"><h4>Solutions</h4><ul><li><a href="/solutions.html">Overview</a></li><li><a href="/industries.html">Industries</a></li></ul></div>
+                    <div class="footer-column"><h4>Company</h4><ul><li><a href="/company.html">About</a></li><li><a href="/index.html#contact">Contact</a></li><li><a href="/demo.html">Request Demo</a></li></ul></div>
+                    <div class="footer-column"><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy Policy</a></li><li><a href="/terms.html">Terms of Service</a></li><li><a href="/data-deletion.html">Data Deletion</a></li></ul></div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Quantera. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="/script.js"></script>
+</body>
+</html>

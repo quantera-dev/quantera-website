@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Request a technical walkthrough of Quantera — post-quantum migration engineering for your codebase.">
+    <title>Request a Demo | Quantera</title>
+    <script>
+        // Night mode: 8pm-6am Central, regardless of visitor's own timezone.
+        (function () {
+            try {
+                var hour = parseInt(new Intl.DateTimeFormat('en-US', {
+                    hour: 'numeric',
+                    hour12: false,
+                    timeZone: 'America/Chicago'
+                }).format(new Date()), 10);
+                if (hour >= 20 || hour < 6) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='7' fill='none' stroke='%2324408C' stroke-width='2.5'/%3E%3Ccircle cx='20' cy='20' r='14' fill='none' stroke='%2324408C' stroke-width='1.75' stroke-opacity='0.45'/%3E%3Ccircle cx='20' cy='20' r='3' fill='%23A8813F'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .demo-form-wrap {
+            max-width: 720px;
+            margin: 0 auto;
+            background: var(--paper-white);
+            border: 1px solid var(--royal-line);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .form-group select,
+        .form-group textarea {
+            padding: 0.9375rem 1.125rem;
+            border: 1px solid var(--royal-line);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-family: inherit;
+            background-color: var(--paper-white);
+            color: var(--ink);
+        }
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            font-size: 0.9375rem;
+            color: var(--ink-muted);
+        }
+        .checkbox-item input { width: 16px; height: 16px; accent-color: var(--royal); }
+        @media (max-width: 640px) {
+            .form-row, .checkbox-grid { grid-template-columns: 1fr; }
+            .demo-form-wrap { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="display: flex; align-items: center; gap: 0.6rem; text-decoration: none;">
+                    <svg class="brand-mark" viewBox="0 0 40 40" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="20" cy="20" r="7" stroke="currentColor" stroke-width="2.5"/>
+                        <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.75" stroke-opacity="0.45"/>
+                        <circle class="brand-mark-dot" cx="20" cy="20" r="3"/>
+                    </svg>
+                    <h1 style="color: var(--royal);">Quantera</h1>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="product.html" class="nav-link">Product</a></li>
+                <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+                <li><a href="security.html" class="nav-link">Security</a></li>
+                <li><a href="company.html" class="nav-link">Company</a></li>
+                <li><a href="demo.html" class="btn btn-primary">Request Demo</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="section-eyebrow">Request a Demo</div>
+            <h1>Let's look at your codebase together.</h1>
+            <p>Tell us a bit about your environment and what you're trying to solve. We'll follow up to schedule a technical walkthrough — no account required to talk to us.</p>
+        </div>
+    </header>
+
+    <section class="section section-light">
+        <div class="container">
+            <div class="demo-form-wrap">
+                <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="4f903e3a-1d03-4c36-9342-a6103351cb7f">
+                    <input type="hidden" name="subject" value="New Demo Request - Quantera Website">
+                    <input type="hidden" name="from_name" value="Quantera Demo Request Form">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first_name">First Name *</label>
+                            <input type="text" id="first_name" name="first_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Last Name *</label>
+                            <input type="text" id="last_name" name="last_name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row mt-2">
+                        <div class="form-group">
+                            <label for="email">Work Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company *</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row mt-2">
+                        <div class="form-group">
+                            <label for="job_title">Job Title</label>
+                            <input type="text" id="job_title" name="job_title">
+                        </div>
+                        <div class="form-group">
+                            <label for="company_size">Company Size</label>
+                            <select id="company_size" name="company_size">
+                                <option value="">Select…</option>
+                                <option>1–20</option>
+                                <option>21–50</option>
+                                <option>51–200</option>
+                                <option>201–500</option>
+                                <option>501–2,000</option>
+                                <option>2,000+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row mt-2">
+                        <div class="form-group">
+                            <label for="industry">Industry</label>
+                            <select id="industry" name="industry">
+                                <option value="">Select…</option>
+                                <option>Federal contractor</option>
+                                <option>Cybersecurity</option>
+                                <option>Fintech</option>
+                                <option>SaaS</option>
+                                <option>Healthcare technology</option>
+                                <option>Critical infrastructure</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="environment">Primary Language / Environment</label>
+                            <select id="environment" name="environment">
+                                <option value="">Select…</option>
+                                <option>Java</option>
+                                <option>C/C++</option>
+                                <option>C#/.NET</option>
+                                <option>Python</option>
+                                <option>Mixed</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="repo_count">Approximate Repository Count</label>
+                        <select id="repo_count" name="repo_count">
+                            <option value="">Select…</option>
+                            <option>1–10</option>
+                            <option>11–50</option>
+                            <option>51–200</option>
+                            <option>200+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <label>What are you trying to solve?</label>
+                        <div class="checkbox-grid mt-1">
+                            <label class="checkbox-item"><input type="checkbox" name="solving" value="Crypto inventory">Crypto inventory</label>
+                            <label class="checkbox-item"><input type="checkbox" name="solving" value="PQC migration">PQC migration</label>
+                            <label class="checkbox-item"><input type="checkbox" name="solving" value="Federal/customer requirement">Federal/customer requirement</label>
+                            <label class="checkbox-item"><input type="checkbox" name="solving" value="CBOM">CBOM</label>
+                            <label class="checkbox-item"><input type="checkbox" name="solving" value="Migration verification">Migration verification</label>
+                            <label class="checkbox-item"><input type="checkbox" name="solving" value="Researching options">Researching options</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <label for="message">Anything else we should know?</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg mt-3" style="width: 100%;">Request Demo</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Quantera</h3>
+                    <p>Post-Quantum Migration Engineering</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="product.html">Product</a></li>
+                            <li><a href="how-it-works.html">How It Works</a></li>
+                            <li><a href="security.html">Security</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="solutions.html">Overview</a></li>
+                            <li><a href="industries.html">Industries</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="company.html">About</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                            <li><a href="demo.html">Request Demo</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                            <li><a href="data-deletion.html">Data Deletion</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Quantera. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

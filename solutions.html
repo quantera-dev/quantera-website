@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Quantera solutions: post-quantum repository scanning, intent-aware migration recommendations, private AI deployment, and compliance and audit workflows for security teams.">
+    <meta name="description" content="Quantera solutions: post-quantum repository scanning, intent-aware migration recommendations, verification, and audit workflows — plus solutions by industry.">
     <title>Solutions | Quantera</title>
     <script>
         // Night mode: 8pm-6am Central, regardless of visitor's own timezone.
@@ -23,7 +23,7 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='7' fill='none' stroke='%2324408C' stroke-width='2.5'/%3E%3Ccircle cx='20' cy='20' r='14' fill='none' stroke='%2324408C' stroke-width='1.75' stroke-opacity='0.45'/%3E%3Ccircle cx='20' cy='20' r='3' fill='%23A8813F'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -41,13 +41,13 @@
                 </a>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="product.html" class="nav-link">Product</a></li>
+                <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
                 <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-                <li><a href="industries.html" class="nav-link">Industries</a></li>
-                <li><a href="platform.html" class="nav-link">Platform</a></li>
+                <li><a href="security.html" class="nav-link">Security</a></li>
                 <li><a href="company.html" class="nav-link">Company</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-                <li><a href="index.html#contact" class="btn btn-primary">Request Demo</a></li>
+                <li><a href="demo.html" class="btn btn-primary">Request Demo</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -61,14 +61,16 @@
     <header class="page-header">
         <div class="container">
             <div class="section-eyebrow">Solutions</div>
-            <h1>Post-Quantum Migration, Backed by Private AI</h1>
-            <p>How Quantera finds quantum-vulnerable cryptography and helps you replace it — deployed privately, with compliance and audit controls built in.</p>
+            <h1>Post-Quantum Migration, Engineered End to End</h1>
+            <p>How Quantera finds quantum-vulnerable cryptography and helps you replace it — with verification and audit controls built in.</p>
         </div>
     </header>
 
-    <!-- Solutions Grid -->
+    <!-- What Quantera Does -->
     <section class="section section-light">
         <div class="container">
+            <div class="section-eyebrow">What Quantera Does</div>
+            <h2 class="section-title text-center">Four capabilities, one workflow</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-header">
@@ -103,43 +105,75 @@
                 <div class="service-card">
                     <div class="service-header">
                         <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4.5"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="1.5"/><path d="M9 4V3.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1V4"/><path d="M9 12.5l2 2 4-4.5"/></svg>
                         </div>
-                        <h3>Private AI Deployment</h3>
+                        <h3>Verification</h3>
                     </div>
-                    <p>End-to-end implementation within your private infrastructure — local inference by default, no data leaving your environment unless you choose it to.</p>
+                    <p>Generated migrations are proven, not just generated — before a human ever reviews them.</p>
                     <ul>
-                        <li>On-premises or private-cloud deployment</li>
-                        <li>External AI providers are opt-in and gated by a data-loss-prevention scan</li>
-                        <li>Dedicated onboarding and configuration support</li>
+                        <li>Baseline and migrated build, existing tests, generated PQC tests</li>
+                        <li>Behavioral workflow checks and a targeted rescan</li>
+                        <li>Delivered as a draft pull request with a full evidence package</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
                     <div class="service-header">
                         <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="1.5"/><path d="M9 4V3.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1V4"/><path d="M9 12.5l2 2 4-4.5"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4.5"/></svg>
                         </div>
                         <h3>Compliance &amp; Audit Workflows</h3>
                     </div>
                     <p>Controls built for teams that need to show their work, not just get an answer.</p>
                     <ul>
-                        <li>Tamper-evident, hash-chained audit log for every scan and request</li>
-                        <li>Four-eyes approval workflow — a reviewer can never be the submitter</li>
-                        <li>Role-based access with three enforced roles and automatic account lockout</li>
+                        <li>Auditable record of every scan, migration, and verification run</li>
+                        <li>Policy-controlled migrations — supported recipes determine what can change</li>
+                        <li>Human approval required; Quantera never merges on its own</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
+    <!-- Solutions by industry -->
     <section class="section section-gray">
+        <div class="container">
+            <div class="section-eyebrow">By Industry</div>
+            <h2 class="section-title text-center">Built for how your organization actually uses Quantera</h2>
+            <p class="section-subtitle">The workflow is the same everywhere. What changes is what's driving the migration.</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3 style="margin-bottom: 0.75rem;">Federal Software Contractors</h3>
+                    <p style="margin-bottom: 1.25rem;">Turn PQC requirements into actionable software migration.</p>
+                    <a href="solutions/federal-contractors.html" style="color: var(--royal); text-decoration: none; font-weight: 600; font-size: 0.9375rem;">Learn more →</a>
+                </div>
+                <div class="service-card">
+                    <h3 style="margin-bottom: 0.75rem;">Application Security Teams</h3>
+                    <p style="margin-bottom: 1.25rem;">Stop turning cryptographic findings into manual remediation backlogs.</p>
+                    <a href="solutions/application-security.html" style="color: var(--royal); text-decoration: none; font-weight: 600; font-size: 0.9375rem;">Learn more →</a>
+                </div>
+                <div class="service-card">
+                    <h3 style="margin-bottom: 0.75rem;">Fintech &amp; Regulated SaaS</h3>
+                    <p style="margin-bottom: 1.25rem;">Modernize cryptography protecting long-lived financial systems.</p>
+                    <a href="solutions/fintech.html" style="color: var(--royal); text-decoration: none; font-weight: 600; font-size: 0.9375rem;">Learn more →</a>
+                </div>
+                <div class="service-card">
+                    <h3 style="margin-bottom: 0.75rem;">Cybersecurity &amp; Infrastructure Vendors</h3>
+                    <p style="margin-bottom: 1.25rem;">Ship cryptographic modernization as part of your own roadmap.</p>
+                    <a href="solutions/security-vendors.html" style="color: var(--royal); text-decoration: none; font-weight: 600; font-size: 0.9375rem;">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-light">
         <div class="container text-center">
             <h2 class="section-title">Not sure which solution fits?</h2>
             <p class="section-subtitle">Tell us about your workflow and we'll help you find the right starting point.</p>
             <div class="hero-buttons">
-                <a href="index.html#contact" class="btn btn-primary btn-lg">Request a Demo</a>
+                <a href="demo.html" class="btn btn-primary btn-lg">Request a Demo</a>
                 <a href="index.html#contact" class="btn btn-secondary btn-lg">Contact Sales</a>
             </div>
         </div>
@@ -158,9 +192,17 @@
                     <div class="footer-column">
                         <h4>Product</h4>
                         <ul>
-                            <li><a href="solutions.html">Solutions</a></li>
+                            <li><a href="product.html">Product</a></li>
+                            <li><a href="how-it-works.html">How It Works</a></li>
+                            <li><a href="security.html">Security</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="solutions.html">Overview</a></li>
                             <li><a href="industries.html">Industries</a></li>
-                            <li><a href="platform.html">Platform</a></li>
                         </ul>
                     </div>
 
@@ -169,7 +211,7 @@
                         <ul>
                             <li><a href="company.html">About</a></li>
                             <li><a href="index.html#contact">Contact</a></li>
-                            <li><a href="index.html#contact">Request Demo</a></li>
+                            <li><a href="demo.html">Request Demo</a></li>
                         </ul>
                     </div>
 

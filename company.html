@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Quantera: why we build a private, local-first engineering platform to find and fix quantum-vulnerable cryptography for security teams and regulated industries.">
+    <meta name="description" content="About Quantera: why we build engineering tools for the gap between finding quantum-vulnerable cryptography and successfully migrating it.">
     <title>Company | Quantera</title>
     <script>
         // Night mode: 8pm-6am Central, regardless of visitor's own timezone.
@@ -23,7 +23,7 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='7' fill='none' stroke='%2324408C' stroke-width='2.5'/%3E%3Ccircle cx='20' cy='20' r='14' fill='none' stroke='%2324408C' stroke-width='1.75' stroke-opacity='0.45'/%3E%3Ccircle cx='20' cy='20' r='3' fill='%23A8813F'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -41,13 +41,13 @@
                 </a>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="product.html" class="nav-link">Product</a></li>
+                <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
                 <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-                <li><a href="industries.html" class="nav-link">Industries</a></li>
-                <li><a href="platform.html" class="nav-link">Platform</a></li>
+                <li><a href="security.html" class="nav-link">Security</a></li>
                 <li><a href="company.html" class="nav-link">Company</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-                <li><a href="index.html#contact" class="btn btn-primary">Request Demo</a></li>
+                <li><a href="demo.html" class="btn btn-primary">Request Demo</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -61,8 +61,8 @@
     <header class="page-header">
         <div class="container">
             <div class="section-eyebrow">Company</div>
-            <h1>About Quantera</h1>
-            <p>We build engineering tools that find quantum-vulnerable cryptography before it becomes a breach — deployed privately, for security teams who can't send source code to a third party.</p>
+            <h1>Making cryptographic modernization executable.</h1>
+            <p>The industry has tools for identifying crypto risk and technologies for implementing PQC. Quantera focuses on the engineering gap between discovery and successful migration.</p>
         </div>
     </header>
 
@@ -70,7 +70,7 @@
     <section class="section section-light">
         <div class="container">
             <div class="section-eyebrow">01 — Mission</div>
-            <p class="page-lede">"Migrate to post-quantum cryptography" is easy to say and hard to do at the scale of a real codebase. Quantera exists to make it an engineering problem, not a guessing game — real static analysis of your code, running inside your own environment, so finding and fixing quantum-vulnerable cryptography doesn't mean handing your source code to someone else.</p>
+            <p class="page-lede">Help software teams safely modernize cryptography at scale. Not a scanner that stops at a finding, and not a model that guesses at a rewrite — an engineering platform that traces what a key actually protects, generates a migration for supported patterns, and proves the result still works before anyone has to trust it.</p>
         </div>
     </section>
 
@@ -79,7 +79,7 @@
         <div class="container">
             <div class="section-eyebrow">02 — Values</div>
             <h2 class="section-title">How We Work</h2>
-            <p class="section-subtitle">The principles behind every deployment.</p>
+            <p class="section-subtitle">The principles behind every migration Quantera generates.</p>
 
             <div class="services-grid">
                 <div class="service-card">
@@ -89,7 +89,7 @@
                         </div>
                         <h3>Privacy by Design</h3>
                     </div>
-                    <p>Your data stays inside your environment by default, not as an afterthought.</p>
+                    <p>We're finalizing exactly how source code and scan data are handled and will publish it in full on our <a href="security.html" style="color: var(--royal); text-decoration: none;">Security page</a> — not as an afterthought.</p>
                 </div>
 
                 <div class="service-card">
@@ -105,11 +105,11 @@
                 <div class="service-card">
                     <div class="service-header">
                         <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3.3 2.5-6 5.5-6s5.5 2.7 5.5 6"/><circle cx="17" cy="9" r="2.25"/><path d="M15.5 14.2a4.6 4.6 0 0 1 4.5 4.6"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="1.5"/><path d="M9 4V3.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1V4"/><path d="M9 12.5l2 2 4-4.5"/></svg>
                         </div>
-                        <h3>Partnership</h3>
+                        <h3>Evidence Over Assertion</h3>
                     </div>
-                    <p>We work alongside your security and IT teams from day one, not after deployment.</p>
+                    <p>A language model's output never substitutes for a real build, test, or rescan. If we can't verify it, we don't call it done.</p>
                 </div>
 
                 <div class="service-card">
@@ -117,21 +117,30 @@
                         <div class="service-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4.5"/></svg>
                         </div>
-                        <h3>Continuous Trust</h3>
+                        <h3>Depth Before Breadth</h3>
                     </div>
-                    <p>Migration guidance evolves as NIST standards, your codebase, and your organization's compliance needs do.</p>
+                    <p>Java support is built and verified end to end before we call another language "supported." Additional recipes and environments ship only after they meet our own verification bar.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
+    <!-- Team -->
     <section class="section section-light">
         <div class="container text-center">
+            <div class="section-eyebrow">03 — Team</div>
+            <h2 class="section-title">Who's building this</h2>
+            <p class="page-lede">Quantera is built by a small engineering team focused specifically on the gap between "we found RSA" and "we shipped a verified replacement." We're adding founder and team details here as we come out of stealth — reach out on <a href="index.html#contact" style="color: var(--royal); text-decoration: none;">LinkedIn or by email</a> if you'd like to talk to us directly in the meantime.</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-gray">
+        <div class="container text-center">
             <h2 class="section-title">Want to see it in action?</h2>
-            <p class="section-subtitle">Talk to our team about deploying Quantera inside your environment.</p>
+            <p class="section-subtitle">Talk to our team about running Quantera against your own repository.</p>
             <div class="hero-buttons">
-                <a href="index.html#contact" class="btn btn-primary btn-lg">Request a Demo</a>
+                <a href="demo.html" class="btn btn-primary btn-lg">Request a Demo</a>
                 <a href="index.html#contact" class="btn btn-secondary btn-lg">Contact Sales</a>
             </div>
         </div>
@@ -150,9 +159,17 @@
                     <div class="footer-column">
                         <h4>Product</h4>
                         <ul>
-                            <li><a href="solutions.html">Solutions</a></li>
+                            <li><a href="product.html">Product</a></li>
+                            <li><a href="how-it-works.html">How It Works</a></li>
+                            <li><a href="security.html">Security</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="solutions.html">Overview</a></li>
                             <li><a href="industries.html">Industries</a></li>
-                            <li><a href="platform.html">Platform</a></li>
                         </ul>
                     </div>
 
@@ -161,7 +178,7 @@
                         <ul>
                             <li><a href="company.html">About</a></li>
                             <li><a href="index.html#contact">Contact</a></li>
-                            <li><a href="index.html#contact">Request Demo</a></li>
+                            <li><a href="demo.html">Request Demo</a></li>
                         </ul>
                     </div>
 

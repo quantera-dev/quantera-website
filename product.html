@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Quantera Quantum Engine: Repository Scanner, Cryptographic Context Engine, Policy Engine, Migration Engine, Verification Engine, CBOM/Evidence, and the developer workflow that ties them together.">
+    <title>Product | Quantera</title>
+    <script>
+        // Night mode: 8pm-6am Central, regardless of visitor's own timezone.
+        (function () {
+            try {
+                var hour = parseInt(new Intl.DateTimeFormat('en-US', {
+                    hour: 'numeric',
+                    hour12: false,
+                    timeZone: 'America/Chicago'
+                }).format(new Date()), 10);
+                if (hour >= 20 || hour < 6) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='7' fill='none' stroke='%2324408C' stroke-width='2.5'/%3E%3Ccircle cx='20' cy='20' r='14' fill='none' stroke='%2324408C' stroke-width='1.75' stroke-opacity='0.45'/%3E%3Ccircle cx='20' cy='20' r='3' fill='%23A8813F'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="display: flex; align-items: center; gap: 0.6rem; text-decoration: none;">
+                    <svg class="brand-mark" viewBox="0 0 40 40" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="20" cy="20" r="7" stroke="currentColor" stroke-width="2.5"/>
+                        <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.75" stroke-opacity="0.45"/>
+                        <circle class="brand-mark-dot" cx="20" cy="20" r="3"/>
+                    </svg>
+                    <h1 style="color: var(--royal);">Quantera</h1>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="product.html" class="nav-link">Product</a></li>
+                <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+                <li><a href="security.html" class="nav-link">Security</a></li>
+                <li><a href="company.html" class="nav-link">Company</a></li>
+                <li><a href="demo.html" class="btn btn-primary">Request Demo</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="section-eyebrow">Product</div>
+            <h1>The Quantera Quantum Engine</h1>
+            <p>Developer-native infrastructure for cryptographic discovery, migration, and verification.</p>
+        </div>
+    </header>
+
+    <!-- Module 1: Repository Scanner -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-eyebrow">01 — Repository Scanner</div>
+            <h2 class="section-title">Real parsers, not grep.</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; max-width: 1000px; margin: 0 auto;">
+                <div>
+                    <p style="color: var(--ink-muted); line-height: 1.8; margin-bottom: 1rem;">Quantera parses source with real language tooling — an AST for Python, the JCA's <code class="mono">getInstance()</code> call pattern (which also catches Bouncy Castle) for Java — and resolves symbols rather than pattern-matching text.</p>
+                    <ul style="padding-left: 1.15rem; color: var(--ink-muted); line-height: 1.9;">
+                        <li>Supported languages: Java today; C, C++, C#, and Python discovery and context</li>
+                        <li>Algorithm, key size, curve, and provider detection</li>
+                        <li>Constant propagation — resolves an algorithm read from a config value, not just a literal string</li>
+                        <li>Call-site and caller/callee relationships</li>
+                    </ul>
+                </div>
+                <div class="mockup" style="max-width: none; margin: 0;">
+                    <div class="mockup-head"><h4>Scan output (sample)</h4></div>
+                    <p class="mono" style="font-size: 0.75rem; color: var(--on-dark-muted); line-height: 2;">
+                        parsed 284 files · resolved 1,041 symbols<br>
+                        <span style="color: var(--danger);">✕ RSA-2048/OAEP</span> RsaKeyProtectionService.java:47<br>
+                        <span style="color: var(--warn);">! ECDSA P-256</span> TransactionSigner.java:29<br>
+                        <span style="color: var(--pqc);">✓ AES-256-GCM</span> VaultEncryptionService.java:42
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Module 2: Cryptographic Context Engine -->
+    <section class="section section-gray">
+        <div class="container text-center">
+            <div class="section-eyebrow">02 — Cryptographic Context Engine</div>
+            <h2 class="section-title">Knows what a key actually protects.</h2>
+            <p class="section-subtitle">Caller tracing, transitive caller tracing, key origins, variable sinks, protected assets, key roles, and application dependencies — resolved, not guessed.</p>
+            <div class="flow-chain">
+                <span class="node">PaymentVaultService</span><span class="sep">→</span>
+                <span class="node hot">RsaCryptoUtil</span><span class="sep">→</span>
+                <span class="node">AES data key</span><span class="sep">→</span>
+                <span class="node">Encrypted payment record</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Module 3: Policy Engine -->
+    <section class="section section-light">
+        <div class="container text-center">
+            <div class="section-eyebrow">03 — Policy Engine</div>
+            <h2 class="section-title">Migration is not freely generated.</h2>
+            <p class="section-subtitle">Every change traces back to an explicitly approved recipe — not a model deciding on the fly.</p>
+            <table class="matrix-table" style="max-width: 700px;">
+                <thead><tr><th>Finding</th><th>Recipe</th></tr></thead>
+                <tbody>
+                    <tr><td class="mono">RSA + key protection</td><td class="yes">→ ML-KEM migration recipe</td></tr>
+                    <tr><td class="mono">AES + data encryption</td><td>Retain</td></tr>
+                    <tr><td class="mono">Unsupported pattern</td><td class="no">Manual Review</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Module 4: Migration Engine -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="section-eyebrow">04 — Migration Engine</div>
+            <h2 class="section-title text-center">Targeted transformations, not a rewrite.</h2>
+            <div class="services-grid" style="max-width: 900px; margin: 0 auto;">
+                <div class="service-card">
+                    <h3 style="margin-bottom: 0.75rem;">Targeted source transformations</h3>
+                    <p>Changes the specific call sites a finding points to — not a broad refactor of surrounding code.</p>
+                </div>
+                <div class="service-card">
+                    <h3 style="margin-bottom: 0.75rem;">Provider-aware</h3>
+                    <p>Implementation respects the cryptographic provider already in use rather than silently swapping it.</p>
+                </div>
+                <div class="service-card">
+                    <h3 style="margin-bottom: 0.75rem;">Contracts preserved, tests generated</h3>
+                    <p>Application interfaces stay the same shape; new tests cover round-trip, tamper, and interop behavior.</p>
+                </div>
+                <div class="service-card">
+                    <h3 style="margin-bottom: 0.75rem;">Diffed, versioned, reversible</h3>
+                    <p>Every migration ships as a reviewable diff with its exact inverse patch stored alongside it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Module 5: Verification Engine -->
+    <section class="section section-dark">
+        <div class="container text-center">
+            <div class="section-eyebrow">05 — Verification Engine</div>
+            <h2 class="section-title">Baseline vs. migrated, proven.</h2>
+            <p class="section-subtitle">The baseline application and the migrated application are both built and tested, so "it still works" is measured, not asserted.</p>
+            <div class="check-grid" style="max-width: 640px; margin: 0 auto; text-align: left;">
+                <div class="check-item"><span class="tick">✓</span><span>Baseline &amp; migrated build</span></div>
+                <div class="check-item"><span class="tick">✓</span><span>Existing test suite</span></div>
+                <div class="check-item"><span class="tick">✓</span><span>Generated PQC tests</span></div>
+                <div class="check-item"><span class="tick">✓</span><span>Behavioral workflow</span></div>
+                <div class="check-item"><span class="tick">✓</span><span>Targeted rescan</span></div>
+                <div class="check-item"><span class="tick">✓</span><span>Dependency changes</span></div>
+                <div class="check-item adv"><span class="tick">✓</span><span>Performance delta (advisory)</span></div>
+                <div class="check-item adv"><span class="tick">✓</span><span>Evidence package generated</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Module 6: CBOM / Evidence -->
+    <section class="section section-light">
+        <div class="container text-center">
+            <div class="section-eyebrow">06 — CBOM &amp; Evidence</div>
+            <h2 class="section-title">A record you can hand to a reviewer.</h2>
+            <p class="section-subtitle">Crypto inventory, migration status, verification history, and an audit trail combine into one evidence report per repository.</p>
+        </div>
+    </section>
+
+    <!-- Module 7: Developer Workflow -->
+    <section class="section section-gray">
+        <div class="container text-center">
+            <div class="section-eyebrow">07 — Developer Workflow</div>
+            <h2 class="section-title">Fits where your team already works.</h2>
+            <div class="flow-chain">
+                <span class="node">GitHub</span><span class="sep">→</span>
+                <span class="node">Quantera</span><span class="sep">→</span>
+                <span class="node">Branch</span><span class="sep">→</span>
+                <span class="node hot">Migration</span><span class="sep">→</span>
+                <span class="node pqc">Verification</span><span class="sep">→</span>
+                <span class="node">Draft PR</span><span class="sep">→</span>
+                <span class="node">Engineer review</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-light">
+        <div class="container text-center">
+            <h2 class="section-title">See the engine run against a real repository</h2>
+            <div class="hero-buttons">
+                <a href="demo.html" class="btn btn-primary btn-lg">Request a Demo</a>
+                <a href="how-it-works.html" class="btn btn-secondary btn-lg">Walk Through an Example</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Quantera</h3>
+                    <p>Post-Quantum Migration Engineering</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="product.html">Product</a></li>
+                            <li><a href="how-it-works.html">How It Works</a></li>
+                            <li><a href="security.html">Security</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="solutions.html">Overview</a></li>
+                            <li><a href="industries.html">Industries</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="company.html">About</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                            <li><a href="demo.html">Request Demo</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                            <li><a href="data-deletion.html">Data Deletion</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Quantera. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

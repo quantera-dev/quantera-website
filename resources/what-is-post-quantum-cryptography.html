@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What post-quantum cryptography is, why RSA and ECC are vulnerable to a sufficiently large quantum computer, and what NIST standardized to replace them.">
+    <title>What Is Post-Quantum Cryptography? | Quantera</title>
+    <script>
+        (function () {
+            try {
+                var hour = parseInt(new Intl.DateTimeFormat('en-US', {
+                    hour: 'numeric', hour12: false, timeZone: 'America/Chicago'
+                }).format(new Date()), 10);
+                if (hour >= 20 || hour < 6) { document.documentElement.setAttribute('data-theme', 'dark'); }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='7' fill='none' stroke='%2324408C' stroke-width='2.5'/%3E%3Ccircle cx='20' cy='20' r='14' fill='none' stroke='%2324408C' stroke-width='1.75' stroke-opacity='0.45'/%3E%3Ccircle cx='20' cy='20' r='3' fill='%23A8813F'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="/index.html" style="display: flex; align-items: center; gap: 0.6rem; text-decoration: none;">
+                    <svg class="brand-mark" viewBox="0 0 40 40" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="20" cy="20" r="7" stroke="currentColor" stroke-width="2.5"/>
+                        <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.75" stroke-opacity="0.45"/>
+                        <circle class="brand-mark-dot" cx="20" cy="20" r="3"/>
+                    </svg>
+                    <h1 style="color: var(--royal);">Quantera</h1>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/index.html#home" class="nav-link">Home</a></li>
+                <li><a href="/product.html" class="nav-link">Product</a></li>
+                <li><a href="/how-it-works.html" class="nav-link">How It Works</a></li>
+                <li><a href="/solutions.html" class="nav-link">Solutions</a></li>
+                <li><a href="/security.html" class="nav-link">Security</a></li>
+                <li><a href="/company.html" class="nav-link">Company</a></li>
+                <li><a href="/demo.html" class="btn btn-primary">Request Demo</a></li>
+            </ul>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <div class="section-eyebrow">PQC Education</div>
+            <h1>What Is Post-Quantum Cryptography?</h1>
+        </div>
+    </header>
+
+    <section class="section section-light">
+        <div class="container">
+            <p class="article-meta">A plain-language primer on why RSA and ECC need replacing, and what replaces them.</p>
+            <div class="article-content">
+                <h2>The short version</h2>
+                <p>Post-quantum cryptography (PQC) is a set of cryptographic algorithms designed to stay secure even against an attacker with a large, fault-tolerant quantum computer. It runs on the classical computers we have today — nothing about deploying it requires you to own quantum hardware. What's new is the math the algorithms are built on, chosen specifically because it doesn't fall to the quantum attacks that break RSA and elliptic-curve cryptography (ECC).</p>
+
+                <h2>Why RSA and ECC are the problem</h2>
+                <p>RSA's security rests on the difficulty of factoring large numbers. Elliptic-curve cryptography — used in ECDSA signatures and ECDH key agreement — rests on the difficulty of the elliptic-curve discrete logarithm problem. Both are hard for classical computers, which is exactly why they've protected the internet for decades.</p>
+                <p>In 1994, mathematician Peter Shor showed that a sufficiently large quantum computer could solve both problems efficiently. Shor's algorithm doesn't weaken RSA or ECC a little — it breaks them outright, given a quantum computer with enough stable qubits to run it. That computer doesn't exist yet at the scale required. But the math describing how it would break these algorithms has been public and unchallenged for three decades.</p>
+
+                <h2>What's still fine</h2>
+                <p>Symmetric cryptography — AES — and cryptographic hash functions aren't broken by Shor's algorithm. A different quantum algorithm, Grover's, gives a quadratic speedup against them, which is addressed by using a large enough key or output size (AES-256 rather than AES-128, for instance). This is why a Quantera scan can find AES-256-GCM and mark it "retain" rather than flagging it for migration — the risk profile is genuinely different from RSA and ECC.</p>
+
+                <h2>What NIST standardized</h2>
+                <p>The U.S. National Institute of Standards and Technology ran a public, multi-year evaluation process, starting in 2016, to select replacement algorithms built on math that resists both classical and quantum attack. In August 2024, NIST finalized its first post-quantum cryptography standards:</p>
+                <ul>
+                    <li><strong>FIPS 203 (ML-KEM)</strong> — a key-encapsulation mechanism, based on CRYSTALS-Kyber, replacing RSA and ECDH for key establishment.</li>
+                    <li><strong>FIPS 204 (ML-DSA)</strong> — a digital signature algorithm, based on CRYSTALS-Dilithium, replacing RSA and ECDSA for signatures.</li>
+                    <li><strong>FIPS 205 (SLH-DSA)</strong> — a stateless, hash-based signature scheme, based on SPHINCS+, standardized as a structurally different backup to ML-DSA.</li>
+                </ul>
+                <p>ML-KEM and ML-DSA are both built on lattice problems — a different mathematical foundation than factoring or discrete logarithms, and one that has no known efficient quantum attack.</p>
+
+                <h2>Why "post-quantum" matters before quantum computers exist</h2>
+                <p>Encrypted data captured today can be stored and decrypted later, once a capable quantum computer exists — a pattern usually called "harvest now, decrypt later." For data that needs to stay confidential for years, the migration deadline isn't when quantum computers arrive; it's however long that data needs to stay secret, counted backward from today. See our <a href="/resources/harvest-now-decrypt-later.html" style="color: var(--royal); text-decoration: none;">explainer on harvest now, decrypt later</a> for more on that math.</p>
+
+                <h2>Where this gets hard in practice</h2>
+                <p>Standardizing the algorithms was the easier part. Finding every place RSA and ECC are actually used across a real codebase — and understanding whether each use is for key establishment or for signatures, since those need different replacements — is a software engineering problem, not a cryptography problem. That's the gap Quantera is built to close; see <a href="/product.html" style="color: var(--royal); text-decoration: none;">how the product works</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-gray text-center">
+        <div class="container">
+            <h2 class="section-title">See what's in your own codebase</h2>
+            <div class="hero-buttons">
+                <a href="/demo.html" class="btn btn-primary btn-lg">Request a Demo</a>
+                <a href="/resources.html" class="btn btn-secondary btn-lg">More Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand"><h3>Quantera</h3><p>Post-Quantum Migration Engineering</p></div>
+                <div class="footer-links">
+                    <div class="footer-column"><h4>Product</h4><ul><li><a href="/product.html">Product</a></li><li><a href="/how-it-works.html">How It Works</a></li><li><a href="/security.html">Security</a></li></ul></div>
+                    <div class="footer-column"><h4>Solutions</h4><ul><li><a href="/solutions.html">Overview</a></li><li><a href="/industries.html">Industries</a></li></ul></div>
+                    <div class="footer-column"><h4>Company</h4><ul><li><a href="/company.html">About</a></li><li><a href="/index.html#contact">Contact</a></li><li><a href="/demo.html">Request Demo</a></li></ul></div>
+                    <div class="footer-column"><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy Policy</a></li><li><a href="/terms.html">Terms of Service</a></li><li><a href="/data-deletion.html">Data Deletion</a></li></ul></div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Quantera. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="/script.js"></script>
+</body>
+</html>
