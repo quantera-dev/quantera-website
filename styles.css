@@ -1,77 +1,84 @@
 /* ==========================================
    QUANTERA - Marketing Website Styles
-   Heritage-editorial system: cream paper, royal-blue ink,
-   engraved hairline ornament, serif + grotesque pairing.
+   Product-native system: dark navy / off-white, blue for
+   technical elements, emerald reserved for post-quantum,
+   amber for review, red for vulnerable crypto. Inter throughout.
    ========================================== */
 
 :root {
-    /* Paper */
-    --cream: #FAF6EC;
-    --cream-deep: #F1E9D6;
-    --paper-white: #FFFEFA;
+    /* Ground */
+    --cream: #F6F8FB;
+    --cream-deep: #EBEFF5;
+    --paper-white: #FFFFFF;
 
-    /* Ink */
-    --royal: #24408C;
-    --royal-deep: #16294F;
-    --royal-soft: rgba(36, 64, 140, 0.08);
-    --royal-line: rgba(36, 64, 140, 0.18);
-    --gold: #A8813F;
+    /* Brand blue (matches the product UI exactly) */
+    --royal: #2563EB;
+    --royal-deep: #0B1120;
+    --royal-soft: rgba(37, 99, 235, 0.08);
+    --royal-line: rgba(15, 23, 42, 0.12);
 
-    --ink: #1C2333;
-    --ink-muted: #5B6478;
+    /* Restrained brand accent — used sparingly (logo dot, small highlights) */
+    --gold: #B23A6E;
+
+    /* Functional signal colors — same roles as the product itself */
+    --danger: #DC2626;
+    --danger-soft: rgba(220, 38, 38, 0.08);
+    --warn: #B45309;
+    --warn-soft: rgba(180, 83, 9, 0.10);
+    --pqc: #0D9668;
+    --pqc-soft: rgba(13, 150, 104, 0.08);
+
+    --ink: #0F172A;
+    --ink-muted: #47536B;
     --ink-faint: #8A93A6;
 
-    /* Shadows (soft paper lift, not neon glow) */
-    --shadow-sm: 0 1px 2px rgba(22, 41, 79, 0.06);
-    --shadow-md: 0 8px 24px rgba(22, 41, 79, 0.08);
-    --shadow-lg: 0 16px 40px rgba(22, 41, 79, 0.10);
+    --nav-glass: rgba(246, 248, 251, 0.88);
 
-    /* Radius: restrained, plaque-like */
-    --radius-sm: 2px;
-    --radius-md: 4px;
-    --radius-lg: 6px;
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.10);
 
-    /* Engraved hairline rule, tiled */
-    --engraved-rule: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='10' viewBox='0 0 120 10'%3E%3Cpath d='M0 5 Q15 0 30 5 T60 5 T90 5 T120 5' fill='none' stroke='%2324408C' stroke-width='0.6' opacity='0.55'/%3E%3C/svg%3E");
-    --engraved-field: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%2324408C' stroke-width='0.6' opacity='0.5'%3E%3Ccircle cx='80' cy='80' r='30'/%3E%3Ccircle cx='80' cy='80' r='46'/%3E%3Ccircle cx='80' cy='80' r='62'/%3E%3Ccircle cx='80' cy='80' r='78'/%3E%3C/g%3E%3C/svg%3E");
+    /* Radius */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
 
-    /* Dark band (used sparingly — one contrast section + footer) */
-    --on-dark: #F2F0E8;
-    --on-dark-muted: #A9B1C4;
-    --on-dark-line: rgba(242, 240, 232, 0.14);
-    --on-dark-card: rgba(242, 240, 232, 0.05);
+    /* Dark band (contrast sections + footer + product mockups) */
+    --on-dark: #F1F5F9;
+    --on-dark-muted: #94A3B8;
+    --on-dark-line: rgba(148, 163, 184, 0.16);
+    --on-dark-card: rgba(148, 163, 184, 0.055);
 }
 
 /* Night mode — auto-applied 8pm–6am Central via inline script in <head> */
 :root[data-theme="dark"] {
-    --cream: #131B30;
-    --cream-deep: #0E1526;
-    --paper-white: #1B2540;
+    --cream: #0B1120;
+    --cream-deep: #0E1626;
+    --paper-white: #131B2E;
 
-    --royal: #6E90EA;
-    --royal-deep: #090E1C;
-    --royal-soft: rgba(110, 144, 234, 0.12);
-    --royal-line: rgba(110, 144, 234, 0.25);
-    --gold: #D8A96A;
+    --royal: #3B82F6;
+    --royal-deep: #060A14;
+    --royal-soft: rgba(59, 130, 246, 0.14);
+    --royal-line: rgba(148, 163, 184, 0.18);
+    --gold: #E8789F;
+
+    --danger: #F87171;
+    --danger-soft: rgba(248, 113, 113, 0.10);
+    --warn: #FBBF24;
+    --warn-soft: rgba(251, 191, 36, 0.10);
+    --pqc: #10D98A;
+    --pqc-soft: rgba(16, 217, 138, 0.09);
 
     --ink: #EEF0F6;
     --ink-muted: #A6AFC4;
-    --ink-faint: #6C7690;
+    --ink-faint: #64748B;
+
+    --nav-glass: rgba(11, 17, 32, 0.85);
 
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
     --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.4);
-
-    --engraved-rule: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='10' viewBox='0 0 120 10'%3E%3Cpath d='M0 5 Q15 0 30 5 T60 5 T90 5 T120 5' fill='none' stroke='%236E90EA' stroke-width='0.6' opacity='0.5'/%3E%3C/svg%3E");
-    --engraved-field: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%236E90EA' stroke-width='0.6' opacity='0.45'%3E%3Ccircle cx='80' cy='80' r='30'/%3E%3Ccircle cx='80' cy='80' r='46'/%3E%3Ccircle cx='80' cy='80' r='62'/%3E%3Ccircle cx='80' cy='80' r='78'/%3E%3C/g%3E%3C/svg%3E");
-}
-
-:root[data-theme="dark"] .navbar {
-    background-color: rgba(19, 27, 48, 0.85);
-}
-
-:root[data-theme="dark"] .nav-menu {
-    background: rgba(19, 27, 48, 0.98);
 }
 
 /* Reset & Base Styles */
@@ -94,7 +101,13 @@ body {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+code, .mono {
+    font-family: ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
 }
 
 .container {
@@ -103,7 +116,6 @@ h1, h2, h3, h4 {
     padding: 0 2rem;
 }
 
-/* Shared engraved rule strip, one per section, at the very top */
 .section,
 .hero {
     position: relative;
@@ -115,10 +127,8 @@ h1, h2, h3, h4 {
     top: 0;
     left: 0;
     right: 0;
-    height: 6px;
-    background-image: var(--engraved-rule);
-    background-repeat: repeat-x;
-    background-size: 120px 6px;
+    height: 1px;
+    background: var(--royal-line);
 }
 
 /* Numbered section eyebrow */
@@ -148,7 +158,7 @@ h1, h2, h3, h4 {
    ========================================== */
 
 .navbar {
-    background-color: rgba(250, 246, 236, 0.9);
+    background-color: var(--nav-glass);
     backdrop-filter: blur(16px) saturate(140%);
     box-shadow: 0 1px 0 var(--royal-line);
     position: sticky;
@@ -293,14 +303,11 @@ h1, h2, h3, h4 {
 .hero::after {
     content: '';
     position: absolute;
-    top: -10%;
-    right: -8%;
-    width: 46%;
-    height: 90%;
-    background-image: var(--engraved-field);
-    background-repeat: no-repeat;
-    background-size: contain;
-    opacity: 0.55;
+    top: -20%;
+    right: -10%;
+    width: 60%;
+    height: 130%;
+    background: radial-gradient(ellipse at center, var(--royal-soft) 0%, transparent 65%);
     pointer-events: none;
 }
 
@@ -462,7 +469,7 @@ h1, h2, h3, h4 {
     width: 900px;
     height: 500px;
     transform: translateX(-50%);
-    background: radial-gradient(ellipse at center, rgba(168, 129, 63, 0.16) 0%, rgba(36, 64, 140, 0.12) 45%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.14) 0%, rgba(16, 217, 138, 0.08) 45%, transparent 70%);
     pointer-events: none;
 }
 
@@ -484,7 +491,7 @@ h1, h2, h3, h4 {
 }
 
 .section-dark::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='10' viewBox='0 0 120 10'%3E%3Cpath d='M0 5 Q15 0 30 5 T60 5 T90 5 T120 5' fill='none' stroke='%23A8813F' stroke-width='0.6' opacity='0.6'/%3E%3C/svg%3E");
+    background: var(--on-dark-line);
     z-index: 1;
 }
 
@@ -863,7 +870,7 @@ h1, h2, h3, h4 {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background: rgba(250, 246, 236, 0.98);
+        background: var(--nav-glass);
         backdrop-filter: blur(16px);
         width: 100%;
         text-align: center;
@@ -988,3 +995,355 @@ h1, h2, h3, h4 {
 .mt-2 { margin-top: 1rem; }
 .mt-3 { margin-top: 1.5rem; }
 .mt-4 { margin-top: 2rem; }
+
+/* ==========================================
+   STEP TRACK — FIND → UNDERSTAND → MIGRATE → VERIFY
+   ========================================== */
+
+.step-track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    font-family: ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+}
+
+.step-track .step {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+}
+
+.step-track .step.on {
+    color: var(--royal);
+}
+
+.step-track .arrow {
+    color: var(--ink-faint);
+    font-size: 0.75rem;
+}
+
+.section-dark .step-track .step { color: var(--on-dark-muted); }
+.section-dark .step-track .step.on { color: var(--pqc); }
+.section-dark .step-track .arrow { color: var(--on-dark-line); }
+
+/* ==========================================
+   BADGE CHIPS — same functional roles as the product
+   ========================================== */
+
+.qchip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid;
+    white-space: nowrap;
+}
+
+.qchip-danger { color: var(--danger); background: var(--danger-soft); border-color: var(--danger); }
+.qchip-warn   { color: var(--warn);   background: var(--warn-soft);   border-color: var(--warn); }
+.qchip-pqc    { color: var(--pqc);    background: var(--pqc-soft);    border-color: var(--pqc); }
+.qchip-info   { color: var(--royal);  background: var(--royal-soft);  border-color: var(--royal); }
+.qchip-neutral{ color: var(--ink-faint); background: var(--royal-line); border-color: transparent; }
+
+/* ==========================================
+   PRODUCT MOCKUP PANEL — the real UI, not stock art
+   ========================================== */
+
+.mockup {
+    position: relative;
+    background: var(--royal-deep);
+    border: 1px solid var(--on-dark-line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 1.5rem 1.5rem 1.25rem;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.mockup-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.1rem;
+}
+
+.mockup-head h4 {
+    font-size: 0.9375rem;
+    color: var(--on-dark);
+    font-weight: 600;
+}
+
+.mockup-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.7rem 0;
+    border-top: 1px solid var(--on-dark-line);
+}
+
+.mockup-row:first-of-type { border-top: none; }
+
+.mockup-cell b {
+    display: block;
+    font-family: ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+    font-size: 0.8125rem;
+    color: var(--on-dark);
+    margin-bottom: 0.15rem;
+}
+
+.mockup-cell span {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--on-dark-muted);
+}
+
+.mockup .qchip-neutral {
+    color: var(--on-dark-muted);
+    background: var(--on-dark-card);
+    border-color: var(--on-dark-line);
+}
+
+.mockup-verified {
+    position: absolute;
+    top: -14px;
+    right: 24px;
+    background: var(--pqc);
+    color: #04120c;
+    font-family: ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(16, 217, 138, 0.35);
+}
+
+/* ==========================================
+   FACT STRIP — small mono facts under a headline
+   ========================================== */
+
+.fact-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+    font-family: ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+}
+
+.fact-strip span {
+    padding: 0 1.25rem;
+    border-left: 1px solid var(--royal-line);
+}
+
+.fact-strip span:first-child { border-left: 0; }
+.fact-strip b { color: var(--ink); font-weight: 700; }
+.section-dark .fact-strip { color: var(--on-dark-muted); }
+.section-dark .fact-strip span { border-left-color: var(--on-dark-line); }
+.section-dark .fact-strip b { color: var(--on-dark); }
+
+/* ==========================================
+   FLOW CHAIN — Application → RSA → AES Key → Records
+   ========================================== */
+
+.flow-chain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-family: ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+    font-size: 0.8125rem;
+}
+
+.flow-chain .node {
+    padding: 0.55rem 1rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--royal-line);
+    background: var(--paper-white);
+    color: var(--ink);
+}
+
+.flow-chain .node.hot {
+    border-color: var(--danger);
+    color: var(--danger);
+    background: var(--danger-soft);
+}
+
+.flow-chain .node.pqc {
+    border-color: var(--pqc);
+    color: var(--pqc);
+    background: var(--pqc-soft);
+}
+
+.flow-chain .sep {
+    color: var(--ink-faint);
+}
+
+/* ==========================================
+   VERIFICATION CHECKLIST
+   ========================================== */
+
+.check-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.4rem 2.5rem;
+    font-family: ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+    font-size: 0.875rem;
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.4rem 0;
+    color: var(--on-dark);
+}
+
+.check-item .tick {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    border-radius: 5px;
+    background: var(--pqc);
+    color: #04120c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6875rem;
+    font-weight: 700;
+}
+
+.check-item.adv .tick {
+    background: var(--warn);
+    color: #1a1204;
+}
+
+/* ==========================================
+   COMPARE GRID — traditional scanner vs Quantera
+   ========================================== */
+
+.compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem;
+    max-width: 980px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.compare-col {
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+}
+
+.compare-col.weak {
+    background: var(--cream-deep);
+    border: 1px solid var(--royal-line);
+}
+
+.compare-col.strong {
+    background: var(--royal-deep);
+    border: 1px solid var(--pqc);
+}
+
+.compare-col h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.compare-col.weak h4 { color: var(--ink-faint); }
+.compare-col.strong h4 { color: var(--pqc); }
+
+.compare-col dl {
+    font-family: ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+    font-size: 0.8125rem;
+    line-height: 2;
+}
+
+.compare-col.weak dl { color: var(--ink-muted); }
+.compare-col.strong dl { color: var(--on-dark-muted); }
+.compare-col dt { font-size: 0.75rem; opacity: 0.75; }
+.compare-col.weak dd { color: var(--ink); font-weight: 600; margin-bottom: 0.5rem; }
+.compare-col.strong dd { color: var(--on-dark); font-weight: 600; margin-bottom: 0.5rem; }
+
+/* ==========================================
+   MATRIX TABLE — supported environments
+   ========================================== */
+
+.matrix-table {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    background: var(--paper-white);
+    border: 1px solid var(--royal-line);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.matrix-table th {
+    text-align: left;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    font-weight: 700;
+    padding: 0.85rem 1.25rem;
+    background: var(--cream-deep);
+    border-bottom: 1px solid var(--royal-line);
+}
+
+.matrix-table td {
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid var(--royal-line);
+    color: var(--ink-muted);
+}
+
+.matrix-table tr:last-child td { border-bottom: none; }
+.matrix-table td.yes { color: var(--pqc); font-weight: 700; }
+.matrix-table td.no { color: var(--ink-faint); }
+
+/* ==========================================
+   PILOT LIST
+   ========================================== */
+
+.pilot-card {
+    max-width: 680px;
+    margin: 0 auto;
+    background: var(--paper-white);
+    border: 1px solid var(--royal-line);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    text-align: left;
+}
+
+.pilot-card ul {
+    margin-top: 1.5rem;
+    padding-left: 1.15rem;
+    color: var(--ink-muted);
+    line-height: 1.9;
+}
+
+.pilot-card li::marker { color: var(--pqc); }
+
+@media (max-width: 768px) {
+    .compare-grid { grid-template-columns: 1fr; }
+    .check-grid { grid-template-columns: 1fr; }
+}

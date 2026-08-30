@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Quantera scans your codebase for quantum-vulnerable cryptography and recommends NIST-standardized post-quantum replacements (ML-KEM-768, ML-DSA-65) — an AI-powered migration engineering platform for security and compliance teams.">
-    <title>Quantera | AI-Powered Post-Quantum Migration Engineering</title>
+    <meta name="description" content="Quantera finds quantum-vulnerable cryptography in your source code, understands what it protects, generates supported post-quantum migrations, and verifies the application still works.">
+    <title>Quantera | Post-Quantum Migration &amp; Verification</title>
     <script>
         // Night mode: 8pm-6am Central, regardless of visitor's own timezone.
         (function () {
@@ -23,7 +23,7 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='7' fill='none' stroke='%2324408C' stroke-width='2.5'/%3E%3Ccircle cx='20' cy='20' r='14' fill='none' stroke='%2324408C' stroke-width='1.75' stroke-opacity='0.45'/%3E%3Ccircle cx='20' cy='20' r='3' fill='%23A8813F'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -55,94 +55,102 @@
         </div>
     </nav>
 
-    <!-- Home Section -->
+    <!-- ============================================================
+         SECTION 1 — HERO
+         ============================================================ -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-eyebrow">Post-Quantum Migration Engineering</div>
-                <h1 class="hero-title">Quantum-Safe Migration, Engineered.</h1>
-                <p class="hero-subtitle">Quantera scans your codebase, finds every RSA, ECC, and DH key before a quantum computer can break it, and recommends the exact NIST-standardized replacement — ML-KEM for key establishment, ML-DSA for signatures — for security and compliance teams who can't afford to guess.</p>
+                <div class="hero-eyebrow">Post-Quantum Migration &amp; Verification</div>
+                <h1 class="hero-title">Turn quantum-vulnerable code into verified post-quantum migrations.</h1>
+                <p class="hero-subtitle">QuanteraAI discovers cryptography inside software repositories, understands what it protects, generates supported post-quantum migrations, and verifies that the application still works.</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary btn-lg">Request a Demo</a>
-                    <a href="#contact" class="btn btn-secondary btn-lg">Contact Sales</a>
+                    <a href="#demo" class="btn btn-secondary btn-lg">Watch 60-Second Demo</a>
                 </div>
+                <p style="margin-top: 1.25rem;"><a href="#how-it-works" style="color: var(--ink-muted); text-decoration: none; font-size: 0.9375rem; font-weight: 600;">See How Quantera Works →</a></p>
 
-                <div class="trust-strip">
-                    <span class="trust-badge">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="6" rx="1"/><rect x="4" y="14" width="16" height="6" rx="1"/><path d="M7.5 7h.01M7.5 17h.01"/></svg>
-                        Local-First Deployment
-                    </span>
-                    <span class="trust-badge">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="15.5" r="1.4"/></svg>
-                        NIST-Standard Recommendations
-                    </span>
-                    <span class="trust-badge">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4.5"/></svg>
-                        Tamper-Evident Audit Trail
-                    </span>
+                <div class="step-track mt-4">
+                    <span class="step on">Find</span><span class="arrow">→</span>
+                    <span class="step on">Understand</span><span class="arrow">→</span>
+                    <span class="step on">Migrate</span><span class="arrow">→</span>
+                    <span class="step on">Verify</span>
                 </div>
             </div>
 
-            <!-- Feature Highlights -->
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="6" rx="1"/><rect x="4" y="14" width="16" height="6" rx="1"/><path d="M7.5 7h.01M7.5 17h.01"/></svg>
-                    </div>
-                    <h3>Scan Any Repository</h3>
-                    <p>Upload a .zip of your codebase. Extraction is hardened against zip-slip and zip-bomb payloads before a single file is scanned.</p>
+            <!-- Hero visual: the real product, not stock quantum art -->
+            <div class="mockup">
+                <span class="mockup-verified">VERIFIED FOR REVIEW</span>
+                <div class="mockup-head">
+                    <h4>Crypto Inventory</h4>
+                    <span class="qchip qchip-info">customer-vault</span>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+                <div class="mockup-row">
+                    <div class="mockup-cell">
+                        <b>RSA-2048</b>
+                        <span>Key protection · Protects AES customer-data key</span>
                     </div>
-                    <h3>Find Vulnerable Cryptography</h3>
-                    <p>RSA, ECDSA, ECDH, DSA, DH, X25519/X448, Ed25519/448, and legacy hashes — located down to the file and line, in Python and Java.</p>
+                    <span class="qchip qchip-pqc">Migration Ready</span>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 4v2.5M12 17.5V20M4 12h2.5M17.5 12H20"/><circle cx="12" cy="12" r="2"/></svg>
+                <div class="mockup-row">
+                    <div class="mockup-cell">
+                        <b>ECDSA</b>
+                        <span>Digital signature · Transaction authenticity</span>
                     </div>
-                    <h3>Get the Right Replacement</h3>
-                    <p>Recommendations are intent-aware: key establishment maps to ML-KEM-768 (FIPS 203), signatures map to ML-DSA-65 (FIPS 204) — not a blanket algorithm swap.</p>
+                    <span class="qchip qchip-warn">Review Required</span>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2V5z"/><path d="M20 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 0 2-2V5z"/></svg>
+                <div class="mockup-row">
+                    <div class="mockup-cell">
+                        <b>AES-256-GCM</b>
+                        <span>Data encryption · Customer records</span>
                     </div>
-                    <h3>See Exactly Where</h3>
-                    <p>Every finding shows its current algorithm, file location, quantum risk, recommendation, and the code itself — not just a summary count.</p>
+                    <span class="qchip qchip-neutral">Retain</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section">
+    <!-- ============================================================
+         SECTION 2 — CREDIBILITY STRIP
+         ============================================================ -->
+    <section class="section section-light" style="padding: 3.5rem 0;">
+        <div class="container text-center">
+            <p style="color: var(--ink-muted); font-size: 0.9375rem; margin-bottom: 1.5rem;">Built around standards-based post-quantum cryptography</p>
+            <div class="fact-strip" style="font-size: 0.8125rem;">
+                <span><b>NIST PQC Standards</b></span>
+                <span><b>ML-KEM</b></span>
+                <span><b>ML-DSA</b></span>
+                <span><b>Developer-native</b></span>
+                <span><b>Policy-controlled migrations</b></span>
+                <span><b>Evidence-backed verification</b></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3 — THE PROBLEM
+         ============================================================ -->
+    <section class="section section-gray">
         <div class="container">
-            <div class="section-eyebrow">01 — The Migration Engine</div>
-            <h2 class="section-title">From Repository to Recommendation</h2>
-            <p class="section-subtitle">Four stages, two live today and two in active development — we'd rather tell you than fake it.</p>
+            <div class="section-eyebrow">01 — The Problem</div>
+            <h2 class="section-title">Finding vulnerable cryptography is only the beginning.</h2>
+            <p class="section-subtitle">Organizations can identify RSA or ECC. The expensive part begins when engineers have to determine what the cryptography does, what depends on it, how to replace it, and whether the migration broke anything.</p>
 
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-header">
                         <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="6" rx="1"/><rect x="4" y="14" width="16" height="6" rx="1"/><path d="M7.5 7h.01M7.5 17h.01"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2V5z"/><path d="M20 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 0 2-2V5z"/></svg>
                         </div>
-                        <h3>Scan Repository</h3>
+                        <h3>You can't migrate what you can't see.</h3>
                     </div>
-                    <p>Upload a .zip of your codebase. Extraction runs through path-traversal and archive-bomb protections — validated against a real zip-slip payload — before anything touches the workspace, then you get a source tree view of what was scanned.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
-                        </div>
-                        <h3>Crypto Findings</h3>
-                    </div>
-                    <p>Python is analyzed via its AST; Java via the JCA's <code>getInstance()</code> call pattern, which also catches Bouncy Castle. Findings cover RSA, ECDSA, ECDH, DSA, DH, X25519/X448, Ed25519/448, AES, SHA-256 and above, MD5/SHA-1, and embedded PEM keys and certificates.</p>
+                    <p>Public-key cryptography may exist across application code, libraries, certificates, configuration, wrappers, and shared services.</p>
+                    <p class="mono" style="font-size: 0.8125rem; color: var(--ink-faint); margin-top: 1rem; line-height: 1.9;">
+                        src/vault/<br>
+                        &nbsp;&nbsp;└─ encryption/<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;└─ key-wrap/<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ <span style="color: var(--danger);">RsaKeyProtectionService.java</span>
+                    </p>
                 </div>
 
                 <div class="service-card">
@@ -150,9 +158,29 @@
                         <div class="service-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 4v2.5M12 17.5V20M4 12h2.5M17.5 12H20"/><circle cx="12" cy="12" r="2"/></svg>
                         </div>
-                        <h3>Recommendation Engine</h3>
+                        <h3>The same algorithm can do different jobs.</h3>
                     </div>
-                    <p>Each finding is read for how the key is actually used, not just its algorithm name — key establishment maps to ML-KEM-768 (FIPS 203), signatures map to ML-DSA-65 (FIPS 204).</p>
+                    <p>RSA may protect a symmetric key, generate signatures, or participate in another protocol. Each use requires different migration reasoning.</p>
+                    <div class="flow-chain" style="justify-content: flex-start; margin-top: 1rem; font-size: 0.75rem;">
+                        <span class="node hot">RSA</span><span class="sep">→</span><span class="node">Key Protection</span><span class="sep">→</span><span class="node pqc">ML-KEM family</span>
+                    </div>
+                    <div class="flow-chain" style="justify-content: flex-start; margin-top: 0.5rem; font-size: 0.75rem;">
+                        <span class="node hot">RSA</span><span class="sep">→</span><span class="node">Digital Signature</span><span class="sep">→</span><span class="node pqc">ML-DSA family</span>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+                        </div>
+                        <h3>A finding is not a fix.</h3>
+                    </div>
+                    <p>After a scanner reports RSA or ECC, engineers still have to trace dependencies, redesign the cryptographic workflow, write code, test it, rescan it, and document the result.</p>
+                    <div class="flow-chain" style="justify-content: flex-start; margin-top: 1rem; font-size: 0.75rem;">
+                        <span class="node">Finding</span><span class="sep">→</span><span class="node">Ticket</span><span class="sep">→</span><span class="node">Engineer</span><span class="sep">→</span><span class="node">Tests</span><span class="sep">→</span><span class="node">Review</span>
+                    </div>
+                    <p style="margin-top: 0.75rem; font-size: 0.8125rem; color: var(--pqc); font-weight: 600;">Quantera compresses that.</p>
                 </div>
 
                 <div class="service-card">
@@ -160,62 +188,448 @@
                         <div class="service-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="1.5"/><path d="M9 4V3.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1V4"/><path d="M9 12.5l2 2 4-4.5"/></svg>
                         </div>
-                        <h3>Generate &amp; Verify Migration</h3>
+                        <h3>Cryptographic changes have a large blast radius.</h3>
                     </div>
-                    <p>Guided code migration and post-migration verification, built on the same findings and recommendations.</p>
-                    <span class="status-tag">In development</span>
+                    <p>Changes can affect key formats, serialization, stored data, APIs, external systems, certificates, and application behavior.</p>
+                    <div class="flow-chain" style="justify-content: flex-start; margin-top: 1rem; font-size: 0.75rem;">
+                        <span class="node">Key format</span><span class="sep">→</span><span class="node">Serialization</span><span class="sep">→</span><span class="node">Stored data</span><span class="sep">→</span><span class="node">APIs</span><span class="sep">→</span><span class="node">Certificates</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Security Section -->
-    <section id="security" class="section section-dark">
+    <!-- ============================================================
+         SECTION 4 — THE QUANTERA SOLUTION
+         ============================================================ -->
+    <section id="how-it-works" class="section section-light">
         <div class="container">
-            <div class="section-eyebrow">02 — Security &amp; Compliance</div>
-            <h2 class="section-title">We Hold Ourselves to the Same Standard</h2>
-            <p class="section-subtitle">The same rigor we bring to your migration is built into how Quantera itself runs.</p>
+            <div class="section-eyebrow">02 — The Solution</div>
+            <h2 class="section-title">One workflow from discovery to verified migration.</h2>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="6" rx="1"/><rect x="4" y="14" width="16" height="6" rx="1"/><path d="M7.5 7h.01M7.5 17h.01"/></svg>
+                        </div>
+                        <h3>Find</h3>
+                    </div>
+                    <p>Discover cryptography in source code. Quantera identifies things such as:</p>
+                    <ul>
+                        <li>RSA, ECDSA, ECDH</li>
+                        <li>AES, key size, curve, provider</li>
+                        <li>Source location and caller relationships</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 4v2.5M12 17.5V20M4 12h2.5M17.5 12H20"/><circle cx="12" cy="12" r="2"/></svg>
+                        </div>
+                        <h3>Understand</h3>
+                    </div>
+                    <p>Determine what the cryptography actually protects — for example:</p>
+                    <p class="mono" style="font-size: 0.75rem; color: var(--ink-muted); margin: 0.75rem 0 1rem;">RSA-2048/OAEP protects an AES-256 data-encryption key used by CustomerVaultService.</p>
+                    <div class="flow-chain" style="justify-content: flex-start; font-size: 0.75rem;">
+                        <span class="node">Application</span><span class="sep">→</span><span class="node hot">RSA</span><span class="sep">→</span><span class="node">AES Key</span><span class="sep">→</span><span class="node">Customer Records</span>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4.5"/></svg>
+                        </div>
+                        <h3>Migrate</h3>
+                    </div>
+                    <p>Generate controlled post-quantum code changes for supported patterns — for example RSA key protection to ML-KEM, or RSA digital signatures to ML-DSA.</p>
+                    <p style="margin-top: 0.75rem; font-size: 0.875rem; font-weight: 600; color: var(--ink);">Migration decisions are policy-controlled rather than chosen freely by an AI model.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="1.5"/><path d="M9 4V3.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1V4"/><path d="M9 12.5l2 2 4-4.5"/></svg>
+                        </div>
+                        <h3>Verify</h3>
+                    </div>
+                    <p>Prove the migration still works: build, existing tests, generated PQC tests, behavioral tests, rescan, compatibility checks, unexpected-file checks, performance measurement.</p>
+                    <span class="status-tag" style="border-color: var(--pqc); color: var(--pqc);">Verified for review</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 5 — DEMO VIDEO
+         ============================================================ -->
+    <section id="demo" class="section section-gray text-center">
+        <div class="container">
+            <div class="section-eyebrow">Live Walkthrough</div>
+            <h2 class="section-title">See Quantera in action.</h2>
+            <p class="section-subtitle">From repository scan to verified migration in under 90 seconds.</p>
+
+            <div style="max-width: 900px; margin: 0 auto; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid var(--royal-line);">
+                <video controls playsinline preload="metadata" style="width: 100%; aspect-ratio: 16 / 9; display: block; background: #05080f;">
+                    <source src="demo.mp4" type="video/mp4">
+                    Your browser doesn't support embedded video. <a href="demo.mp4">Download the demo</a> instead.
+                </video>
+            </div>
+
+            <div class="check-grid" style="max-width: 720px; margin: 2.5rem auto 0; text-align: left; color: var(--ink-muted);">
+                <div class="check-item" style="color: var(--ink);"><span class="tick">1</span><span>Repository connected</span></div>
+                <div class="check-item" style="color: var(--ink);"><span class="tick">2</span><span>Cryptography discovered</span></div>
+                <div class="check-item" style="color: var(--ink);"><span class="tick">3</span><span>RSA context identified</span></div>
+                <div class="check-item" style="color: var(--ink);"><span class="tick">4</span><span>PQC migration generated</span></div>
+                <div class="check-item" style="color: var(--ink);"><span class="tick">5</span><span>Application verified</span></div>
+                <div class="check-item" style="color: var(--ink);"><span class="tick">6</span><span>Developer review package created</span></div>
+            </div>
+
+            <div class="hero-buttons" style="margin-top: 2.5rem;">
+                <a href="#contact" class="btn btn-primary btn-lg">Request a Live Technical Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 6 — WHAT PROTECTS WHAT
+         ============================================================ -->
+    <section class="section section-light text-center">
+        <div class="container">
+            <div class="section-eyebrow">Beyond a Finding</div>
+            <h2 class="section-title">Go beyond "RSA found."</h2>
+
+            <div class="compare-grid">
+                <div class="compare-col weak">
+                    <h4>Traditional scanner</h4>
+                    <dl>
+                        <dt>Finding</dt><dd>RSA-2048 detected</dd>
+                        <dt>Location</dt><dd>KeyManager.java</dd>
+                        <dt>Severity</dt><dd>High</dd>
+                    </dl>
+                </div>
+                <div class="compare-col strong">
+                    <h4>Quantera</h4>
+                    <dl>
+                        <dt>Algorithm</dt><dd>RSA-2048/OAEP</dd>
+                        <dt>Purpose</dt><dd>Key protection</dd>
+                        <dt>Key role</dt><dd>Public-key protection</dd>
+                        <dt>Protects</dt><dd>AES-256 customer-data key</dd>
+                        <dt>Used by</dt><dd>CustomerVaultService</dd>
+                        <dt>Output</dt><dd>EncryptedCustomerRecord</dd>
+                        <dt>Ultimately protects</dt><dd>Customer financial records</dd>
+                        <dt>Migration</dt><dd>ML-KEM supported</dd>
+                        <dt>Confidence</dt><dd>High</dd>
+                    </dl>
+                </div>
+            </div>
+            <p style="max-width: 640px; margin: 2.5rem auto 0; font-size: 1.0625rem; font-weight: 600; color: var(--ink);">Migration decisions become safer when cryptography is understood in application context.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 7 — VERIFICATION
+         ============================================================ -->
+    <section class="section section-dark text-center">
+        <div class="container">
+            <div class="section-eyebrow">Verification</div>
+            <h2 class="section-title">Generated code is not trusted by default.</h2>
+            <p class="section-subtitle">Quantera verifies supported migrations using real engineering checks before presenting them for human review.</p>
+
+            <div class="check-grid" style="max-width: 760px; margin: 0 auto; text-align: left;">
+                <div class="check-item"><span class="tick">✓</span><span>Baseline build</span></div>
+                <div class="check-item"><span class="tick">✓</span><span>Baseline tests</span></div>
+                <div class="check-item"><span class="tick">✓</span><span>Patch compile</span></div>
+                <div class="check-item"><span class="tick">✓</span><span>Existing tests</span></div>
+                <div class="check-item"><span class="tick">✓</span><span>Generated PQC tests</span></div>
+                <div class="check-item"><span class="tick">✓</span><span>Negative tamper tests</span></div>
+                <div class="check-item"><span class="tick">✓</span><span>Behavioral workflow</span></div>
+                <div class="check-item"><span class="tick">✓</span><span>Targeted rescan</span></div>
+                <div class="check-item"><span class="tick">✓</span><span>Remaining vulnerable path</span></div>
+                <div class="check-item"><span class="tick">✓</span><span>No unexpected file changes</span></div>
+                <div class="check-item"><span class="tick">✓</span><span>Dependency changes</span></div>
+                <div class="check-item"><span class="tick">✓</span><span>Known API compatibility</span></div>
+                <div class="check-item adv"><span class="tick">✓</span><span>Performance (advisory)</span></div>
+                <div class="check-item adv"><span class="tick">✓</span><span>Serialized object compat (advisory)</span></div>
+            </div>
+
+            <div style="margin: 2.5rem auto 0;">
+                <span class="qchip qchip-pqc" style="font-size: 1rem; padding: 0.6rem 1.5rem;">VERIFIED FOR REVIEW</span>
+            </div>
+            <p style="max-width: 620px; margin: 1.75rem auto 0; color: var(--on-dark-muted); font-size: 0.9375rem;">A language model's output never substitutes for a real build, test, or rescan.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 8 — SUPPORTED ENVIRONMENTS
+         ============================================================ -->
+    <section class="section section-light text-center">
+        <div class="container">
+            <div class="section-eyebrow">Supported Environments</div>
+            <h2 class="section-title">Built deep first, then broad.</h2>
+
+            <table class="matrix-table">
+                <thead>
+                    <tr><th>Environment</th><th>Discovery</th><th>Context</th><th>Automated Migration</th><th>Verification</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td style="color: var(--ink); font-weight: 600;">Java</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓ Supported patterns</td><td class="yes">✓</td></tr>
+                    <tr><td style="color: var(--ink); font-weight: 600;">C / C++</td><td class="yes">✓</td><td class="yes">✓</td><td>Expanding</td><td class="no">—</td></tr>
+                    <tr><td style="color: var(--ink); font-weight: 600;">C# / .NET</td><td class="yes">✓</td><td class="yes">✓</td><td>Expanding</td><td class="no">—</td></tr>
+                    <tr><td style="color: var(--ink); font-weight: 600;">Python</td><td class="yes">✓</td><td class="yes">✓</td><td>Expanding</td><td class="no">—</td></tr>
+                </tbody>
+            </table>
+
+            <p style="margin-top: 2.5rem; font-weight: 600; color: var(--ink);">Current Java migration support</p>
+            <div class="flow-chain mt-2">
+                <span class="node hot">RSA key protection</span><span class="sep">→</span><span class="node pqc">ML-KEM</span>
+            </div>
+            <div class="flow-chain mt-2">
+                <span class="node hot">RSA digital signatures</span><span class="sep">→</span><span class="node pqc">ML-DSA</span>
+            </div>
+            <p class="page-lede mt-4">Additional migration recipes and environments are added only after they meet Quantera's verification requirements.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 9 — CBOM / INVENTORY
+         ============================================================ -->
+    <section class="section section-gray text-center">
+        <div class="container">
+            <div class="section-eyebrow">Cryptographic Inventory</div>
+            <h2 class="section-title">Build a cryptographic inventory you can actually act on.</h2>
+            <p class="page-lede">Quantera can produce repository-level cryptographic information including algorithm, variant, purpose, operation, key size, curve, provider, file, class, method, caller relationships, protected asset, destination, quantum status, migration status, and verification status.</p>
+
+            <div style="overflow-x: auto; margin-top: 2.5rem;">
+                <table class="matrix-table" style="text-align: left; max-width: 980px;">
+                    <thead>
+                        <tr><th>Algorithm</th><th>Location</th><th>Purpose</th><th>What it protects</th><th>Status</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="mono" style="color: var(--ink); font-weight: 600;">AES-256-GCM</td><td class="mono">VaultEncryptionService.java:42</td><td>Data encryption</td><td>Customer PII at rest</td><td><span class="qchip qchip-neutral">Retain</span></td></tr>
+                        <tr><td class="mono" style="color: var(--ink); font-weight: 600;">RSA-2048 OAEP</td><td class="mono">RsaKeyProtectionService.java:47</td><td>Key protection</td><td>The AES-256 data key</td><td><span class="qchip qchip-pqc">→ ML-KEM-768</span></td></tr>
+                        <tr><td class="mono" style="color: var(--ink); font-weight: 600;">RSA-2048</td><td class="mono">ReceiptSigningService.java:38</td><td>Digital signature</td><td>Payment receipts</td><td><span class="qchip qchip-pqc">→ ML-DSA-65</span></td></tr>
+                        <tr><td class="mono" style="color: var(--ink); font-weight: 600;">ECDSA P-256</td><td class="mono">TransactionSigner.java:29</td><td>Digital signature</td><td>Transaction integrity</td><td><span class="qchip qchip-warn">Review required</span></td></tr>
+                        <tr><td class="mono" style="color: var(--ink); font-weight: 600;">pgcrypto AES</td><td class="mono">schema.sql:88</td><td>Column encryption</td><td>ssn, dob</td><td><span class="qchip qchip-danger">Classical KEK</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="hero-buttons" style="margin-top: 2.5rem;">
+                <a href="platform.html" class="btn btn-secondary btn-lg">Explore Cryptographic Inventory</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 10 — WHO IT'S FOR
+         ============================================================ -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-eyebrow">Who It's For</div>
+            <h2 class="section-title text-center">Built for software organizations facing cryptographic modernization.</h2>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="1.5"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                        </div>
+                        <h3>Federal software contractors</h3>
+                    </div>
+                    <p>Software suppliers preparing for government and customer PQC requirements.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4.5"/></svg>
+                        </div>
+                        <h3>Cybersecurity &amp; infrastructure vendors</h3>
+                    </div>
+                    <p>Products containing cryptographic dependencies across complex software estates.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v9M7.5 12h9"/></svg>
+                        </div>
+                        <h3>Fintech &amp; regulated SaaS</h3>
+                    </div>
+                    <p>Organizations protecting long-lived sensitive information and operating under security and compliance pressure.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="1.5"/><path d="M9 4V3.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1V4"/><path d="M9 12.5l2 2 4-4.5"/></svg>
+                        </div>
+                        <h3>Application Security &amp; Engineering teams</h3>
+                    </div>
+                    <p>Teams responsible for translating crypto findings into actual software changes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 11 — ROI
+         ============================================================ -->
+    <section class="section section-gray text-center">
+        <div class="container">
+            <div class="section-eyebrow">Engineering Leverage</div>
+            <h2 class="section-title">Migrate more software with the engineering team you already have.</h2>
+            <p class="section-subtitle">Quantera automates repeatable migration work so engineers can spend more time reviewing architecture and making decisions.</p>
+
+            <div class="flow-chain mt-2" style="font-size: 0.75rem;">
+                <span class="node">Security Engineer</span><span class="sep">→</span><span class="node">Developer</span><span class="sep">→</span><span class="node">Security Architect</span><span class="sep">→</span><span class="node">QA</span><span class="sep">→</span><span class="node">AppSec Validation</span><span class="sep">→</span><span class="node">Documentation</span>
+            </div>
+            <p style="margin: 0.75rem 0 0; font-size: 0.8125rem; color: var(--ink-faint);">Traditional process</p>
+
+            <div class="flow-chain mt-3" style="font-size: 0.8125rem;">
+                <span class="node pqc">One engineer operates</span><span class="sep">→</span><span class="node pqc">Senior reviewer approves</span>
+            </div>
+            <p style="margin: 0.75rem 0 0; font-size: 0.8125rem; color: var(--pqc); font-weight: 600;">Quantera workflow</p>
+
+            <div class="services-grid mt-4" style="text-align: left;">
+                <div class="service-card">
+                    <h3 style="margin-bottom: 0.75rem;">Reduce manual analysis</h3>
+                    <p>Automate cryptographic discovery and dependency tracing.</p>
+                </div>
+                <div class="service-card">
+                    <h3 style="margin-bottom: 0.75rem;">Reduce remediation effort</h3>
+                    <p>Generate supported migration changes instead of starting from a blank editor.</p>
+                </div>
+                <div class="service-card" style="grid-column: 1 / -1;">
+                    <h3 style="margin-bottom: 0.75rem;">Reduce verification work</h3>
+                    <p>Automatically execute builds, tests, rescans, and evidence collection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 12 — WHY NOW
+         ============================================================ -->
+    <section class="section section-light text-center">
+        <div class="container">
+            <div class="section-eyebrow">Why Now</div>
+            <h2 class="section-title">The post-quantum transition has moved from research to implementation.</h2>
+            <p class="page-lede">NIST's PQC standards are finalized — FIPS 203 and FIPS 204 were ratified in 2024. Federal migration planning is underway, with U.S. federal systems targeted to move off RSA by 2035. Organizations need crypto inventories, and software estates take years to migrate. Long-lived sensitive information creates urgency: an average enterprise repository carries hundreds of crypto call sites.</p>
+            <p style="max-width: 640px; margin: 1.75rem auto 0; font-size: 1.0625rem; font-weight: 600; color: var(--ink);">The migration needs to begin before cryptographically relevant quantum computers arrive, not after.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 13 — TRUST AND SECURITY
+         ============================================================ -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-eyebrow">Trust &amp; Security</div>
+            <h2 class="section-title">Your source code deserves more protection than a typical AI prompt.</h2>
 
             <div class="security-grid">
                 <div class="security-feature">
                     <div class="security-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="15.5" r="1.4"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 4v2.5M12 17.5V20M4 12h2.5M17.5 12H20"/><circle cx="12" cy="12" r="2"/></svg>
                     </div>
-                    <h3>Post-Quantum Encryption at Rest</h3>
-                    <p>Every document Quantera stores is protected the way we recommend to you: a fresh AES-256-GCM key per file, wrapped with ML-KEM-768, with metadata signed by ML-DSA-65.</p>
+                    <h3>Controlled AI</h3>
+                    <p>AI helps classify application context but does not independently choose migration algorithms.</p>
                 </div>
 
                 <div class="security-feature">
                     <div class="security-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3.3 2.5-6 5.5-6s5.5 2.7 5.5 6"/><circle cx="17" cy="9" r="2.25"/><path d="M15.5 14.2a4.6 4.6 0 0 1 4.5 4.6"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="1.5"/><path d="M9 4V3.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1V4"/><path d="M9 12.5l2 2 4-4.5"/></svg>
                     </div>
-                    <h3>Role-Based Access Control</h3>
-                    <p>Three enforced roles — user, admin, compliance — with server-side authorization on every privileged action and automatic lockout after repeated failed logins.</p>
+                    <h3>Policy-controlled migrations</h3>
+                    <p>Supported recipes determine what Quantera can change.</p>
                 </div>
 
                 <div class="security-feature">
                     <div class="security-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="6" rx="1"/><rect x="4" y="14" width="16" height="6" rx="1"/><path d="M7.5 7h.01M7.5 17h.01"/></svg>
                     </div>
-                    <h3>Local-First Processing</h3>
-                    <p>Local inference and local storage by default. If a request is ever routed to an external model, it passes through a data-loss-prevention gate first.</p>
+                    <h3>Isolated verification</h3>
+                    <p>Builds and tests can run inside hardened, ephemeral environments.</p>
+                </div>
+
+                <div class="security-feature">
+                    <div class="security-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3.3 2.5-6 5.5-6s5.5 2.7 5.5 6"/><circle cx="17" cy="9" r="2.25"/><path d="M15.5 14.2a4.6 4.6 0 0 1 4.5 4.6"/></svg>
+                    </div>
+                    <h3>Human approval</h3>
+                    <p>Quantera generates reviewable changes. Engineers retain merge control.</p>
                 </div>
 
                 <div class="security-feature">
                     <div class="security-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4.5"/></svg>
                     </div>
-                    <h3>Tamper-Evident Audit Trail</h3>
-                    <p>Every scan and every request is written to a hash-chained log that can be independently verified end to end — not just a timestamped table.</p>
+                    <h3>Auditability</h3>
+                    <p>Scans, migrations, verification runs, and evidence are recorded.</p>
+                </div>
+
+                <div class="security-feature">
+                    <div class="security-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="15.5" r="1.4"/></svg>
+                    </div>
+                    <h3>Source privacy</h3>
+                    <p>We're finalizing our source-retention and model-handling policy — full detail will publish on a dedicated Security page.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- ============================================================
+         SECTION 14 — PILOT OFFER
+         ============================================================ -->
+    <section class="section section-gray text-center">
+        <div class="container">
+            <div class="section-eyebrow">Design Partner Program</div>
+            <h2 class="section-title">Become a Quantera design partner.</h2>
+            <p class="section-subtitle">We're working with software teams preparing for post-quantum migration and looking for organizations willing to validate Quantera against real application patterns.</p>
+
+            <div class="pilot-card">
+                <ul>
+                    <li>Up to 5 Java repositories</li>
+                    <li>Cryptographic inventory</li>
+                    <li>Migration-readiness analysis</li>
+                    <li>Supported PQC migration attempts</li>
+                    <li>Verification evidence</li>
+                    <li>Engineering review session</li>
+                </ul>
+            </div>
+
+            <div class="hero-buttons" style="margin-top: 2.5rem;">
+                <a href="#contact" class="btn btn-primary btn-lg">Apply for a PQC Migration Pilot</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 15 — FINAL CTA
+         ============================================================ -->
+    <section class="section section-dark text-center">
+        <div class="container">
+            <h2 class="section-title">See what quantum-vulnerable cryptography is hiding in your software.</h2>
+            <p class="section-subtitle">Discover it. Understand it. Migrate supported patterns. Verify the result.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary btn-lg">Request Demo</a>
+                <a href="#contact" class="btn btn-outline btn-lg" style="border-color: var(--on-dark-line); color: var(--on-dark);">Apply for Pilot</a>
+            </div>
+            <p class="mono mt-4" style="color: var(--pqc); font-size: 0.875rem; letter-spacing: 0.04em;">QuanteraAI — Find. Understand. Migrate. Verify.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT
+         ============================================================ -->
     <section id="contact" class="section section-light">
         <div class="container">
-            <div class="section-eyebrow">03 — Contact</div>
+            <div class="section-eyebrow">Contact</div>
             <h2 class="section-title">Get in Touch</h2>
             <p class="section-subtitle">Have questions or need a tailored demo? Our team will respond within 24 hours.</p>
 
