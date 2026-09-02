@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="What post-quantum cryptography is, why RSA and ECC are vulnerable to a sufficiently large quantum computer, and what NIST standardized to replace them.">
-    <title>What Is Post-Quantum Cryptography? | Quantera</title>
+    <title>What Is Post-Quantum Cryptography? | QuanteraAI</title>
     <script>
         (function () {
             try {
@@ -31,7 +31,7 @@
                         <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.75" stroke-opacity="0.45"/>
                         <circle class="brand-mark-dot" cx="20" cy="20" r="3"/>
                     </svg>
-                    <h1 style="color: var(--royal);">Quantera</h1>
+                    <h1 style="color: var(--royal);">QuanteraAI</h1>
                 </a>
             </div>
             <ul class="nav-menu">
@@ -66,7 +66,7 @@
                 <p>In 1994, mathematician Peter Shor showed that a sufficiently large quantum computer could solve both problems efficiently. Shor's algorithm doesn't weaken RSA or ECC a little — it breaks them outright, given a quantum computer with enough stable qubits to run it. That computer doesn't exist yet at the scale required. But the math describing how it would break these algorithms has been public and unchallenged for three decades.</p>
 
                 <h2>What's still fine</h2>
-                <p>Symmetric cryptography — AES — and cryptographic hash functions aren't broken by Shor's algorithm. A different quantum algorithm, Grover's, gives a quadratic speedup against them, which is addressed by using a large enough key or output size (AES-256 rather than AES-128, for instance). This is why a Quantera scan can find AES-256-GCM and mark it "retain" rather than flagging it for migration — the risk profile is genuinely different from RSA and ECC.</p>
+                <p>Symmetric cryptography — AES — and cryptographic hash functions aren't broken by Shor's algorithm. A different quantum algorithm, Grover's, gives a quadratic speedup against them, which is addressed by using a large enough key or output size (AES-256 rather than AES-128, for instance). This is why a QuanteraAI scan can find AES-256-GCM and mark it "retain" rather than flagging it for migration — the risk profile is genuinely different from RSA and ECC.</p>
 
                 <h2>What NIST standardized</h2>
                 <p>The U.S. National Institute of Standards and Technology ran a public, multi-year evaluation process, starting in 2016, to select replacement algorithms built on math that resists both classical and quantum attack. In August 2024, NIST finalized its first post-quantum cryptography standards:</p>
@@ -81,7 +81,7 @@
                 <p>Encrypted data captured today can be stored and decrypted later, once a capable quantum computer exists — a pattern usually called "harvest now, decrypt later." For data that needs to stay confidential for years, the migration deadline isn't when quantum computers arrive; it's however long that data needs to stay secret, counted backward from today. See our <a href="/resources/harvest-now-decrypt-later.html" style="color: var(--royal); text-decoration: none;">explainer on harvest now, decrypt later</a> for more on that math.</p>
 
                 <h2>Where this gets hard in practice</h2>
-                <p>Standardizing the algorithms was the easier part. Finding every place RSA and ECC are actually used across a real codebase — and understanding whether each use is for key establishment or for signatures, since those need different replacements — is a software engineering problem, not a cryptography problem. That's the gap Quantera is built to close; see <a href="/product.html" style="color: var(--royal); text-decoration: none;">how the product works</a>.</p>
+                <p>Standardizing the algorithms was the easier part. Finding every place RSA and ECC are actually used across a real codebase — and understanding whether each use is for key establishment or for signatures, since those need different replacements — is a software engineering problem, not a cryptography problem. That's the gap QuanteraAI is built to close; see <a href="/product.html" style="color: var(--royal); text-decoration: none;">how the product works</a>.</p>
             </div>
         </div>
     </section>
@@ -99,7 +99,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand"><h3>Quantera</h3><p>Post-Quantum Migration Engineering</p></div>
+                <div class="footer-brand"><h3>QuanteraAI</h3><p>Post-Quantum Migration Engineering</p></div>
                 <div class="footer-links">
                     <div class="footer-column"><h4>Product</h4><ul><li><a href="/product.html">Product</a></li><li><a href="/how-it-works.html">How It Works</a></li><li><a href="/security.html">Security</a></li></ul></div>
                     <div class="footer-column"><h4>Solutions</h4><ul><li><a href="/solutions.html">Overview</a></li><li><a href="/industries.html">Industries</a></li></ul></div>
@@ -107,7 +107,7 @@
                     <div class="footer-column"><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy Policy</a></li><li><a href="/terms.html">Terms of Service</a></li><li><a href="/data-deletion.html">Data Deletion</a></li></ul></div>
                 </div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2026 Quantera. All rights reserved.</p></div>
+            <div class="footer-bottom"><p>&copy; 2026 QuanteraAI. All rights reserved.</p></div>
         </div>
     </footer>
     <script src="/script.js"></script>
