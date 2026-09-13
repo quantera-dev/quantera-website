@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="QuanteraAI Terms of Service - Terms governing the QuanteraAI website, services, and the QuanteraAI Publisher application">
+    <meta name="description" content="QuanteraAI Terms of Service - Terms governing the QuanteraAI website and the post-quantum migration engineering platform.">
     <title>Terms of Service | QuanteraAI</title>
     <script>
         // Night mode: 8pm-6am Central, regardless of visitor's own timezone.
@@ -23,7 +23,7 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='7' fill='none' stroke='%2324408C' stroke-width='2.5'/%3E%3Ccircle cx='20' cy='20' r='14' fill='none' stroke='%2324408C' stroke-width='1.75' stroke-opacity='0.45'/%3E%3Ccircle cx='20' cy='20' r='3' fill='%23A8813F'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
         .legal-page {
@@ -42,7 +42,7 @@
         }
         .legal-header h1 {
             font-size: 2.75rem;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--ink);
             margin-bottom: 1rem;
         }
@@ -61,7 +61,7 @@
             font-size: 1.5rem;
             margin-top: 2.5rem;
             margin-bottom: 1rem;
-            font-weight: 600;
+            font-weight: 700;
         }
         .legal-content h2:first-child {
             margin-top: 0;
@@ -82,19 +82,10 @@
         .legal-content li {
             margin-bottom: 0.5rem;
         }
-        .legal-callout {
-            border-left: 3px solid var(--gold);
-            background: var(--cream);
-            padding: 1.25rem 1.5rem;
-            border-radius: 0 var(--radius) var(--radius) 0;
-            margin: 1.5rem 0;
-            color: var(--ink-muted);
-            line-height: 1.7;
-        }
         .legal-card {
             background: var(--cream);
             border: 1px solid var(--royal-line);
-            border-radius: var(--radius);
+            border-radius: var(--radius-md);
             padding: 1.5rem 1.75rem;
             margin-bottom: 2.5rem;
         }
@@ -104,6 +95,15 @@
         .legal-card p {
             margin-bottom: 0;
             margin-top: 0.5rem;
+        }
+        .legal-callout {
+            border-left: 3px solid var(--gold);
+            background: var(--cream);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin: 1.5rem 0;
+            color: var(--ink-muted);
+            line-height: 1.7;
         }
         .legal-fineprint {
             color: var(--ink-faint);
@@ -163,106 +163,87 @@
 
             <div class="legal-header">
                 <h1>Terms of Service</h1>
-                <p>Terms governing the QuanteraAI website, services, and the QuanteraAI Publisher application</p>
+                <p>Terms governing the QuanteraAI website and the post-quantum migration engineering platform</p>
             </div>
 
             <div class="legal-content">
-                <p class="last-updated"><strong>Effective Date:</strong> August 9, 2026 &nbsp;&bull;&nbsp; <strong>Last Updated:</strong> August 9, 2026</p>
+                <p class="last-updated"><strong>Effective Date:</strong> September 2026 &nbsp;&bull;&nbsp; <strong>Last Updated:</strong> September 2026</p>
 
                 <div class="legal-card">
                     <strong>Plain-language summary:</strong>
-                    <p>QuanteraAI Publisher can help create, review, schedule, and publish content to connected social-media accounts. You remain responsible for what you approve and publish, and you must use the service lawfully and in accordance with the rules of any connected platform.</p>
+                    <p>QuanteraAI scans source code you submit, finds quantum-vulnerable cryptography, and can generate supported post-quantum migrations for you to review. You retain merge control at all times — QuanteraAI never applies a change on its own — and you're responsible for reviewing what it produces before you rely on it.</p>
                 </div>
 
                 <h2>1. Acceptance of Terms</h2>
-                <p>These Terms of Service ("Terms") govern your access to and use of the QuanteraAI website at <a href="https://quanteraai.io" style="color: var(--royal); text-decoration: none;">quanteraai.io</a>, QuanteraAI products and services, and the QuanteraAI Publisher application (collectively, the "Services").</p>
+                <p>These Terms of Service ("Terms") are entered into between you and QuanteraAI LLC ("QuanteraAI," "we," "us," or "our") and govern your access to and use of the QuanteraAI website at <a href="https://quanteraai.io" style="color: var(--royal); text-decoration: none;">quanteraai.io</a> and the QuanteraAI platform (collectively, the "Services").</p>
                 <p>By accessing or using the Services, you agree to these Terms. If you do not agree, do not use the Services.</p>
 
                 <h2>2. Eligibility and Authorized Use</h2>
-                <p>You may use the Services only if you have the legal capacity and authority to enter into these Terms. If you use the Services on behalf of a business or organization, you represent that you are authorized to bind that organization.</p>
-                <p>You are responsible for ensuring that anyone using your account is properly authorized.</p>
+                <p>You may use the Services only if you have the legal capacity and authority to enter into these Terms. If you use the Services on behalf of an organization, you represent that you are authorized to bind that organization and that you have the right to submit any repository or code you provide.</p>
 
-                <h2>3. QuanteraAI Publisher</h2>
-                <p>QuanteraAI Publisher is designed to assist with social-media content generation, review, approval, scheduling, publishing, and related analytics.</p>
-                <p>Features may include:</p>
+                <h2>3. The Service</h2>
+                <p>QuanteraAI scans source code to discover cryptography, determine what it protects, generate supported post-quantum migrations, and verify the result. Depending on the features you use, this may include:</p>
                 <ul>
-                    <li>AI-assisted captions, post copy, hashtags, calls to action, and content variations;</li>
-                    <li>content drafts and approval workflows;</li>
-                    <li>content calendars and scheduled publishing;</li>
-                    <li>connections to supported social-media platforms through authorized APIs;</li>
-                    <li>publishing status, error reporting, and retry functionality; and</li>
-                    <li>performance or engagement analytics where supported and authorized.</li>
+                    <li>Repository scanning via direct upload or a connected GitHub App;</li>
+                    <li>cryptographic inventory and findings, with location, purpose, and quantum-risk detail;</li>
+                    <li>policy-controlled migration generation for supported patterns; and</li>
+                    <li>automated verification (build, test, and rescan) with results delivered as a draft pull request.</li>
                 </ul>
+                <p>QuanteraAI is under active development. Some features described on our website — including automated code migration and post-migration verification for a given environment — may be partially available, in limited release, or still in development; we label these honestly on our <a href="product.html" style="color: var(--royal); text-decoration: none;">Product</a> page rather than implying they are complete.</p>
 
-                <h2>4. Connected Accounts and Third-Party Platforms</h2>
-                <p>You may choose to connect third-party accounts, including Facebook, Instagram, LinkedIn, or other supported services. You authorize QuanteraAI to access and use information from those accounts only as necessary to provide the features you request and within the permissions you grant.</p>
-                <p>Your use of a connected platform remains subject to that platform's terms, policies, technical restrictions, and API requirements. QuanteraAI does not control third-party platforms and is not responsible for changes to their APIs, permissions, availability, policies, or functionality.</p>
-                <p>You may disconnect or revoke access to a connected account at any time through the applicable platform or through functionality made available by QuanteraAI.</p>
+                <h2>4. Your Repositories and Content</h2>
+                <p>You retain ownership of the code and materials you submit to the Services. You represent that you have the rights necessary to submit that content and to authorize QuanteraAI to process it as described in these Terms and our <a href="privacy.html" style="color: var(--royal); text-decoration: none;">Privacy Policy</a>.</p>
+                <p>You grant QuanteraAI a limited, non-exclusive right to access, process, and analyze your submitted code solely to provide, secure, and improve the Services.</p>
 
-                <h2>5. Content Approval and Publishing</h2>
-                <p>QuanteraAI Publisher is intended to use an approval-first workflow unless you explicitly enable an automated publishing rule. Content may be generated or prepared automatically, but you are responsible for reviewing content before approving or publishing it.</p>
-                <p>When you approve, schedule, or otherwise authorize content for publication, you instruct QuanteraAI to transmit that content to the selected platform on your behalf.</p>
+                <h2>5. AI-Generated Output</h2>
+                <p>QuanteraAI uses AI to assist with classifying how cryptography is used in your code. AI-assisted classification and generated migrations may be incomplete or incorrect. Migration targets are determined by policy-controlled recipes, not by a model's free-form judgment, but generated code is still a proposal, not a guarantee.</p>
                 <div class="legal-callout">
-                    You are responsible for verifying the accuracy, legality, suitability, intellectual-property rights, disclosures, and regulatory compliance of content you publish using the Services.
+                    You are responsible for reviewing any migration, finding, or recommendation before merging it, relying on it, or representing it as compliant with any law, standard, or contractual requirement.
                 </div>
 
-                <h2>6. AI-Generated Content</h2>
-                <p>Artificial intelligence may generate incomplete, inaccurate, inappropriate, or misleading content. AI-generated output is provided as an assistive tool and should not be treated as legal, financial, medical, compliance, or other professional advice.</p>
-                <p>You must independently review content before relying on it or publishing it. QuanteraAI does not guarantee that generated content is unique, error-free, non-infringing, or suitable for a particular purpose.</p>
+                <h2>6. Human Review and Merge Control</h2>
+                <p>QuanteraAI does not merge code changes on its own. Migrations are delivered as draft pull requests for your engineers to review, test, and merge (or reject) at their discretion.</p>
 
-                <h2>7. Your Content</h2>
-                <p>You retain ownership of content and materials you submit to the Services, subject to any rights held by third parties.</p>
-                <p>You grant QuanteraAI a limited, non-exclusive right to host, process, reproduce, format, transmit, and otherwise use your content solely as reasonably necessary to provide, secure, maintain, and improve the Services.</p>
-                <p>You represent that you have all rights necessary to provide the content and to authorize its processing and publication.</p>
-
-                <h2>8. Prohibited Uses</h2>
+                <h2>7. Prohibited Uses</h2>
                 <p>You may not use the Services to:</p>
                 <ul>
-                    <li>violate any law, regulation, court order, or third-party right;</li>
-                    <li>publish spam, scams, deceptive content, unlawful advertising, or fraudulent material;</li>
-                    <li>harass, threaten, exploit, impersonate, or unlawfully discriminate against others;</li>
+                    <li>violate any law, regulation, or third-party right;</li>
+                    <li>submit code you do not have the rights to submit;</li>
                     <li>upload malware or attempt to compromise the security or availability of the Services;</li>
-                    <li>circumvent platform permissions, access controls, rate limits, or security safeguards;</li>
-                    <li>access accounts or data without authorization;</li>
-                    <li>reverse engineer or misuse the Services except where such restriction is prohibited by law; or</li>
-                    <li>use the Services in a manner that could cause QuanteraAI or a connected platform to violate applicable law or platform policy.</li>
+                    <li>circumvent access controls, rate limits, or security safeguards; or</li>
+                    <li>access accounts, workspaces, or repositories without authorization.</li>
                 </ul>
 
-                <h2>9. Account Security</h2>
-                <p>You are responsible for maintaining the confidentiality of your account credentials and for activity conducted through your account. You must promptly notify QuanteraAI if you suspect unauthorized access or compromise.</p>
-                <p>Do not send QuanteraAI your Facebook, Instagram, LinkedIn, or other third-party passwords. Connected accounts should be authorized using supported authentication methods such as OAuth.</p>
+                <h2>8. Account Security</h2>
+                <p>You are responsible for maintaining the confidentiality of your account credentials and for activity conducted through your account. Connected GitHub access should be authorized using GitHub's own authentication methods; do not send QuanteraAI your GitHub password.</p>
 
-                <h2>10. Privacy</h2>
-                <p>Our handling of personal information is described in the <a href="privacy.html" style="color: var(--royal); text-decoration: none;">QuanteraAI Privacy Policy</a>. Instructions for requesting deletion of data associated with Meta-connected accounts are available on our <a href="data-deletion.html" style="color: var(--royal); text-decoration: none;">Data Deletion</a> page.</p>
+                <h2>9. Privacy</h2>
+                <p>Our handling of personal information and source code is described in the <a href="privacy.html" style="color: var(--royal); text-decoration: none;">QuanteraAI Privacy Policy</a>. Instructions for requesting deletion of your data are available on our <a href="data-deletion.html" style="color: var(--royal); text-decoration: none;">Data Deletion</a> page.</p>
 
-                <h2>11. Intellectual Property</h2>
-                <p>The Services, including QuanteraAI software, branding, designs, interfaces, documentation, and other proprietary materials, are owned by QuanteraAI or its licensors and are protected by applicable intellectual-property laws.</p>
-                <p>Except for rights expressly granted in these Terms, no rights are transferred to you.</p>
+                <h2>10. Intellectual Property</h2>
+                <p>The Services, including QuanteraAI's software, branding, designs, interfaces, and documentation, are owned by QuanteraAI or its licensors and are protected by applicable intellectual-property laws. Except for rights expressly granted in these Terms, no rights are transferred to you.</p>
 
-                <h2>12. Service Availability and Changes</h2>
-                <p>We may modify, suspend, discontinue, or limit features of the Services. Publishing and analytics functionality may also be interrupted by third-party API outages, permission changes, account restrictions, rate limits, or platform review requirements.</p>
-                <p>We do not guarantee uninterrupted or error-free availability.</p>
+                <h2>11. Service Availability and Changes</h2>
+                <p>We may modify, suspend, discontinue, or limit features of the Services, including features currently in development. We do not guarantee uninterrupted or error-free availability.</p>
 
-                <h2>13. Suspension and Termination</h2>
-                <p>We may suspend or terminate access to the Services if we reasonably believe your use violates these Terms, creates security or legal risk, infringes third-party rights, or threatens the operation of the Services.</p>
-                <p>You may stop using the Services at any time and may disconnect supported third-party accounts. Data deletion requests are handled as described in our Privacy Policy and Data Deletion instructions.</p>
+                <h2>12. Suspension and Termination</h2>
+                <p>We may suspend or terminate access to the Services if we reasonably believe your use violates these Terms, creates security or legal risk, or threatens the operation of the Services. You may stop using the Services at any time and may disconnect your GitHub account. Data deletion requests are handled as described in our Privacy Policy and Data Deletion instructions.</p>
 
-                <h2>14. Disclaimers</h2>
-                <p>To the maximum extent permitted by law, the Services are provided "as is" and "as available," without warranties of any kind, express or implied. QuanteraAI disclaims implied warranties of merchantability, fitness for a particular purpose, non-infringement, and any warranties arising from course of dealing or usage of trade.</p>
+                <h2>13. Disclaimers</h2>
+                <p>To the maximum extent permitted by law, the Services are provided "as is" and "as available," without warranties of any kind, express or implied. QuanteraAI does not warrant that any finding, migration, or verification result is complete, accurate, or sufficient to satisfy any legal, regulatory, or contractual cryptography requirement. QuanteraAI is not currently SOC 2 certified or otherwise independently certified; see our <a href="security.html" style="color: var(--royal); text-decoration: none;">Security page</a> for our actual compliance status.</p>
 
-                <h2>15. Limitation of Liability</h2>
-                <p>To the maximum extent permitted by law, QuanteraAI will not be liable for indirect, incidental, special, consequential, exemplary, or punitive damages, or for loss of profits, revenue, goodwill, data, business opportunities, or social-media account access arising from or related to the Services.</p>
-                <p>Some jurisdictions do not allow certain limitations of liability, so portions of this section may not apply to you.</p>
+                <h2>14. Limitation of Liability</h2>
+                <p>To the maximum extent permitted by law, QuanteraAI will not be liable for indirect, incidental, special, consequential, exemplary, or punitive damages, or for loss of profits, revenue, goodwill, data, or business opportunities arising from or related to the Services, including from a generated migration you chose to merge.</p>
 
-                <h2>16. Governing Law</h2>
+                <h2>15. Governing Law</h2>
                 <p>These Terms are governed by the laws of the State of Texas, United States, without regard to conflict-of-law principles. Any dispute will be handled in a court of competent jurisdiction in Texas unless applicable law requires otherwise.</p>
 
-                <h2>17. Changes to These Terms</h2>
+                <h2>16. Changes to These Terms</h2>
                 <p>We may update these Terms as the Services or applicable requirements change. The revised Terms will be posted on this page with an updated "Last Updated" date. Continued use of the Services after an update constitutes acceptance of the revised Terms to the extent permitted by law.</p>
 
-                <h2>18. Contact</h2>
+                <h2>17. Contact</h2>
                 <p>Questions regarding these Terms may be sent to:</p>
-                <p><strong>QuanteraAI</strong><br>
+                <p><strong>QuanteraAI LLC</strong><br>
                 Email: <a href="mailto:admin@quanteraai.io" style="color: var(--royal); text-decoration: none;">admin@quanteraai.io</a><br>
                 Website: <a href="https://quanteraai.io" style="color: var(--royal); text-decoration: none;">https://quanteraai.io</a></p>
 
@@ -319,9 +300,11 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 QuanteraAI. All rights reserved.</p>
+                <p>&copy; 2026 QuanteraAI LLC. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
