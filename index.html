@@ -231,7 +231,7 @@
                         </div>
                         <h3>Understand</h3>
                     </div>
-                    <p>Determine what the cryptography actually protects — for example:</p>
+                    <p>QuanteraAI doesn't stop after detecting vulnerable cryptography. It traces each algorithm from externally exposed endpoints through infrastructure and application dependencies down to the code and configuration implementing it — for example:</p>
                     <p class="mono" style="font-size: 0.75rem; color: var(--ink-muted); margin: 0.75rem 0 1rem;">RSA-2048/OAEP protects an AES-256 data-encryption key used by CustomerVaultService.</p>
                     <div class="flow-chain" style="justify-content: flex-start; font-size: 0.75rem;">
                         <span class="node">Application</span><span class="sep">→</span><span class="node hot">RSA</span><span class="sep">→</span><span class="node">AES Key</span><span class="sep">→</span><span class="node">Customer Records</span>
